@@ -121,7 +121,8 @@
         <local_identifier>kplo.bterm1</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-        <definition>ShadowCam companding bterm 1 (See appendix in the ShadowCam archive SIS for detailed companding information)</definition>
+        <definition>ShadowCam companding bterm 1 (See appendix in the ShadowCam archive 
+            SIS for detailed companding information)</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
@@ -134,7 +135,8 @@
         <local_identifier>kplo.bterm2</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-        <definition>ShadowCam companding bterm 2 (See appendix in the ShadowCam archive SIS for detailed companding information)</definition>
+        <definition>ShadowCam companding bterm 2 (See appendix in the ShadowCam archive 
+            SIS for detailed companding information)</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
@@ -147,7 +149,8 @@
         <local_identifier>kplo.bterm3</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-        <definition>ShadowCam companding bterm 3 (See appendix in the ShadowCam archive SIS for detailed companding information)</definition>
+        <definition>ShadowCam companding bterm 3 (See appendix in the ShadowCam archive 
+            SIS for detailed companding information)</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
@@ -160,7 +163,8 @@
         <local_identifier>kplo.bterm4</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-        <definition>ShadowCam companding bterm 4 (See appendix in the ShadowCam archive SIS for detailed companding information)</definition>
+        <definition>ShadowCam companding bterm 4 (See appendix in the ShadowCam archive 
+            SIS for detailed companding information)</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
@@ -173,7 +177,8 @@
         <local_identifier>kplo.bterm5</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-        <definition>ShadowCam companding bterm 5 (See appendix in the ShadowCam archive SIS for detailed companding information)</definition>
+        <definition>ShadowCam companding bterm 5 (See appendix in the ShadowCam archive 
+            SIS for detailed companding information)</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
@@ -186,7 +191,7 @@
         <local_identifier>kplo.data_quality_desc</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>
+	    <definition>
             Describes how to interpret the data_quality_id field.
         </definition>
         <DD_Value_Domain>
@@ -201,8 +206,10 @@
         <local_identifier>kplo.data_quality_id</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>
-	    LROC-style data quality ID bitmask with minimal differences between ShadowCam and LROC definitions. See data_quality_desc for details. The individual boolean fields (dqi_*) are likely easier to use for new software.
+	    <definition>
+	       LROC-style data quality ID bitmask with minimal differences 
+	       between ShadowCam and LROC definitions. See data_quality_desc for details. 
+	       The individual boolean fields (dqi_*) are likely easier to use for new software.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -217,7 +224,10 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
         <definition>
-	    The corruption detection algorithm found a strong likelihood of image corruption somewhere in the observation. This is often localized to a small area, leaving most of the image usable.
+	        The corruption detection algorithm found a strong 
+	        likelihood of image corruption somewhere in the observation. 
+	        This is often localized to a small area, leaving most of the 
+	        image usable.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -232,7 +242,8 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
         <definition>
-	    The focal plane temperature was outside of the nominal operational limits. The calibration of the image is likely to not be as good in this case.
+	        The focal plane temperature was outside of the nominal operational limits. 
+	        The calibration of the image is likely to not be as good in this case.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -247,7 +258,8 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
         <definition>
-	    One or more 1 MiB data blocks are missing from the image. Due to interleaving, this typically results in a pattern of 4 pixels present 4 pixels missing.
+	        One or more 1 MiB data blocks are missing from the image. Due to interleaving, 
+	        this typically results in a pattern of 4 pixels present 4 pixels missing.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -262,7 +274,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
         <definition>
-	    SPICE was unavailable for this observation.
+	        SPICE was unavailable for this observation.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -277,7 +289,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
         <definition>
-	    This observation could not be calibrated.
+	        This observation could not be calibrated.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -291,8 +303,8 @@
         <local_identifier>kplo.dqi_under_saturated</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>
-	    One or more 0 DN values are present in the companded 8-bit DN.
+	    <definition>
+	        One or more 0 DN values are present in the companded 8-bit DN.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -306,13 +318,13 @@
         <local_identifier>kplo.execution_spacecraft_time</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>The spacecraft time of when the image command was
-	    executed. Use this time with the SCLK kernel and add the
-	    start_time_offset value for the most accurate image start.
+	    <definition>The spacecraft time of when the image command was
+	       executed. Use this time with the SCLK kernel and add the
+	       start_time_offset value for the most accurate image start.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_String</value_data_type>
+            <value_data_type>ASCII_Date_Time_YMD</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
 
@@ -322,10 +334,10 @@
         <local_identifier>kplo.execution_time</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>The UTC time and date at the execution of the image
-	    acquisition command. Add the start time offset to this time
-	    to get the start of the image data. Use the spacecraft clock
-	    version of the time with an SCLK kernel for the most
+	    <definition>The UTC time and date at the execution of the image
+	        acquisition command. Add the start time offset to this time
+	        to get the start of the image data. Use the spacecraft clock
+	        version of the time with an SCLK kernel for the most
             accurate timing.
         </definition>
         <DD_Value_Domain>
@@ -340,9 +352,9 @@
         <local_identifier>kplo.gain_ch0</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>
-	    The analog front end gain for channel 0. See ShadowCam calibration paper for details on the gain correction.
-	</definition>
+	    <definition>
+	        The analog front end gain for channel 0. See ShadowCam calibration paper for details on the gain correction.
+	    </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
@@ -355,8 +367,8 @@
         <local_identifier>kplo.gain_ch1</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>
-	    The analog front end gain for channel 1. See ShadowCam calibration paper for details on the gain correction.
+	    <definition>
+	        The analog front end gain for channel 1. See ShadowCam calibration paper for details on the gain correction.
     	</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -370,9 +382,9 @@
         <local_identifier>kplo.gain_ch2</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>
-	    The analog front end gain for channel 2. See ShadowCam calibration paper for details on the gain correction.
-	</definition>
+	    <definition>
+	       The analog front end gain for channel 2. See ShadowCam calibration paper for details on the gain correction.
+	    </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
@@ -385,9 +397,9 @@
         <local_identifier>kplo.gain_ch3</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>
-	    The analog front end gain for channel 3. See ShadowCam calibration paper for details on the gain correction.
-	</definition>
+	    <definition>
+	        The analog front end gain for channel 3. See ShadowCam calibration paper for details on the gain correction.
+	    </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
@@ -400,9 +412,9 @@
         <local_identifier>kplo.gain_ch4</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>
-	    The analog front end gain for channel 4. See ShadowCam calibration paper for details on the gain correction.
-	</definition>
+	    <definition>
+	        The analog front end gain for channel 4. See ShadowCam calibration paper for details on the gain correction.
+	    </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
@@ -415,9 +427,9 @@
         <local_identifier>kplo.gain_ch5</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>
-	    The analog front end gain for channel 4. See ShadowCam calibration paper for details on the gain correction.
-	</definition>
+	    <definition>
+	        The analog front end gain for channel 4. See ShadowCam calibration paper for details on the gain correction.
+	    </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
@@ -430,9 +442,9 @@
         <local_identifier>kplo.klines</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>
-	    The number of 1024-line image chunks commanded (includes preroll).
-	</definition>
+	    <definition>
+	        The number of 1024-line image chunks commanded (includes preroll).
+	    </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
@@ -445,8 +457,10 @@
         <local_identifier>kplo.line_rate_code</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>
-	    The TDI line rate code commanded. The line time in seconds can be computed from the commanded line rate using the expression 50e-9*(12*524+(lr*(38+1)+46)), where lr is thecommanded line rate (0-4095).
+	    <definition>
+	        The TDI line rate code commanded. The line time in seconds can be computed 
+	        from the commanded line rate using the expression 50e-9*(12*524+(lr*(38+1)+46)), 
+	        where lr is thecommanded line rate (0-4095).
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -508,9 +522,9 @@
         <local_identifier>kplo.mode_test</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>
-	    The instrument was commanded in test mode, resulting in a gradient rather than image data.
-	</definition>
+    	<definition>
+	        The instrument was commanded in test mode, resulting in a gradient rather than image data.
+	    </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Boolean</value_data_type>
@@ -523,9 +537,9 @@
         <local_identifier>kplo.offset_ch0</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>
-	    The analog front end offset for channel 0.
-	</definition>
+	    <definition>
+	        The analog front end offset for channel 0.
+	    </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
@@ -538,9 +552,9 @@
         <local_identifier>kplo.offset_ch1</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>
-	    The analog front end offset for channel 1.
-	</definition>
+	    <definition>
+	        The analog front end offset for channel 1.
+	    </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
@@ -553,9 +567,9 @@
         <local_identifier>kplo.offset_ch2</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>
-	    The analog front end offset for channel 2.
-	</definition>
+	    <definition>
+	        The analog front end offset for channel 2.
+	    </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
@@ -568,9 +582,9 @@
         <local_identifier>kplo.offset_ch3</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>
-	    The analog front end offset for channel 3.
-	</definition>
+	    <definition>
+	        The analog front end offset for channel 3.
+	    </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
@@ -583,9 +597,9 @@
         <local_identifier>kplo.offset_ch4</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>
-	    The analog front end offset for channel 4.
-	</definition>
+    	<definition>
+	        The analog front end offset for channel 4.
+	    </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
@@ -598,9 +612,9 @@
         <local_identifier>kplo.offset_ch5</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>
-	    The analog front end offset for channel 5.
-	</definition>
+	    <definition>
+	        The analog front end offset for channel 5.
+	    </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
@@ -614,7 +628,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
         <definition>
-	    The number of image lines dropped to initialize the TDI sensor. Typically, this is a minimum of 256.
+	        The number of image lines dropped to initialize the TDI sensor. Typically, this is a minimum of 256.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -660,8 +674,8 @@
         <local_identifier>kplo.product_version_id</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>
-	    A version specifier to differentiate how the data was processed.
+	    <definition>
+	        A version specifier to differentiate how the data was processed.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -675,9 +689,11 @@
         <local_identifier>kplo.rationale_desc</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>
-	    Any available commentary on the goal of the observation. This is created at planning time, and specific instrument and spacecraft performance may impact if the resulting image meets the original goal or not.
-	</definition>
+	    <definition>
+	        Any available commentary on the goal of the observation. This is created 
+	        at planning time, and specific instrument and spacecraft performance may 
+	        impact if the resulting image meets the original goal or not.
+	    </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
@@ -691,7 +707,9 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
         <definition>
-            The time in seconds after the execution time that the first image row started. Use this with execution_spacecraft_time and the KPLO SCLK kernel to get the best available start of the image data.
+            The time in seconds after the execution time that the first image row started. 
+            Use this with execution_spacecraft_time and the KPLO SCLK kernel to get the best 
+            available start of the image data.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -706,9 +724,10 @@
         <local_identifier>kplo.tdi_direction</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>
-	    The TDI direction of the sensor (A or B). This must match the flight direction of the spacecraft except for calibration images.
-	</definition>
+	    <definition>
+	        The TDI direction of the sensor (A or B). This must match the flight 
+	        direction of the spacecraft except for calibration images.
+	    </definition>
         <DD_Value_Domain>
             <enumeration_flag>true</enumeration_flag>
             <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
@@ -729,9 +748,11 @@
         <local_identifier>kplo.temperature_fpa_a</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>
-	    The temperature of the ‘A’ sensor adjacent to the focal plane. This sensor is located on the heat strap going to the radiator and is the primary temperature used for calibration.
-	</definition>
+	    <definition>
+	        The temperature of the ‘A’ sensor adjacent to the focal plane. This sensor 
+	        is located on the heat strap going to the radiator and is the primary 
+	        temperature used for calibration.
+	    </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -745,9 +766,11 @@
         <local_identifier>kplo.temperature_fpa_b</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>
-	    The temperature of the ‘B’ sensor adjacent to the focal plane. This sensor is on the opposite side of the TDI sensor from ‘A’, but is not on the copper strap.
-	</definition>
+	    <definition>
+	        The temperature of the ‘B’ sensor adjacent to the focal plane. This 
+	        sensor is on the opposite side of the TDI sensor from ‘A’, but is not 
+	        on the copper strap.
+	    </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -761,9 +784,9 @@
         <local_identifier>kplo.temperature_fpga</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>
-	    The temperature reported on the electronics board adjacent to the FPGA.
-	</definition>
+	    <definition>
+	        The temperature reported on the electronics board adjacent to the FPGA.
+	    </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -777,8 +800,8 @@
         <local_identifier>kplo.temperature_telescope</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>
-	    The temperature reported from the metering structure of the telescope.
+	    <definition>
+	        The temperature reported from the metering structure of the telescope.
         </definition>    
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -793,9 +816,9 @@
         <local_identifier>kplo.xterm0</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>
-	    ShadowCam companding xterm 0 (See appendix in the ShadowCam archive SIS for detailed companding information)
-	</definition>
+	    <definition>
+	        ShadowCam companding xterm 0 (See appendix in the ShadowCam archive SIS for detailed companding information)
+	    </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -808,9 +831,9 @@
         <local_identifier>kplo.xterm1</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>
-	    ShadowCam companding xterm 1 (See appendix in the ShadowCam archive SIS for detailed companding information)
-	</definition>
+	    <definition>
+	        ShadowCam companding xterm 1 (See appendix in the ShadowCam archive SIS for detailed companding information)
+	    </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -823,9 +846,9 @@
         <local_identifier>kplo.xterm2</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>
-	    ShadowCam companding xterm 2 (See appendix in the ShadowCam archive SIS for detailed companding information)
-	</definition>
+	    <definition>
+	        ShadowCam companding xterm 2 (See appendix in the ShadowCam archive SIS for detailed companding information)
+	    </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -838,9 +861,9 @@
         <local_identifier>kplo.xterm3</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>
-	    ShadowCam companding xterm 3 (See appendix in the ShadowCam archive SIS for detailed companding information)
-	</definition>
+	    <definition>
+	        ShadowCam companding xterm 3 (See appendix in the ShadowCam archive SIS for detailed companding information)
+	    </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -853,9 +876,9 @@
         <local_identifier>kplo.xterm4</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-	<definition>
-	    ShadowCam companding xterm 4 (See appendix in the ShadowCam archive SIS for detailed companding information)
-	</definition>
+	    <definition>
+	        ShadowCam companding xterm 4 (See appendix in the ShadowCam archive SIS for detailed companding information)
+	    </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
