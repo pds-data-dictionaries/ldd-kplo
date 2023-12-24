@@ -3,13 +3,13 @@ PDS Validate Tool Report
 
 Configuration:
    Version                       3.4.1
-   Date                          2023-12-24T21:26:39Z
+   Date                          2023-12-24T21:45:33Z
 
 Parameters:
-   Targets                       [file:/home/runner/work/ldd-kplo/ldd-kplo/build/development/056f006cb461fe061d01c5e650cb5be05bafd24a/1.19.0.0/PDS4_KPLO_1J00_1000.xml]
+   Targets                       [file:/home/runner/work/ldd-kplo/ldd-kplo/build/development/f01a82973d01c38d5d64630ed5e0a801f8d8ab17/1.19.0.0/PDS4_KPLO_1J00_1000.xml]
    Rule Type                     pds4.label
-   User Specified Schemas        [file:/home/runner/work/ldd-kplo/ldd-kplo/build/development/056f006cb461fe061d01c5e650cb5be05bafd24a/1.19.0.0/PDS4_KPLO_1J00_1000.xsd, file:/tmp/PDS4_PDS_1J00.xsd]
-   User Specified Schematrons    [file:/home/runner/work/ldd-kplo/ldd-kplo/build/development/056f006cb461fe061d01c5e650cb5be05bafd24a/1.19.0.0/PDS4_KPLO_1J00_1000.sch, file:/tmp/PDS4_PDS_1J00.sch]
+   User Specified Schemas        [file:/home/runner/work/ldd-kplo/ldd-kplo/build/development/f01a82973d01c38d5d64630ed5e0a801f8d8ab17/1.19.0.0/PDS4_KPLO_1J00_1000.xsd, file:/tmp/PDS4_PDS_1J00.xsd]
+   User Specified Schematrons    [file:/home/runner/work/ldd-kplo/ldd-kplo/build/development/f01a82973d01c38d5d64630ed5e0a801f8d8ab17/1.19.0.0/PDS4_KPLO_1J00_1000.sch, file:/tmp/PDS4_PDS_1J00.sch]
    Severity Level                WARNING
    Recurse Directories           true
    File Filters Used             [*.xml, *.XML]
@@ -22,7 +22,7 @@ Parameters:
 
 Product Level Validation Results
 
-  FAIL: file:/home/runner/work/ldd-kplo/ldd-kplo/build/development/056f006cb461fe061d01c5e650cb5be05bafd24a/1.19.0.0/PDS4_KPLO_1J00_1000.xml
+  FAIL: file:/home/runner/work/ldd-kplo/ldd-kplo/build/development/f01a82973d01c38d5d64630ed5e0a801f8d8ab17/1.19.0.0/PDS4_KPLO_1J00_1000.xml
       ERROR  [error.label.schematron]   line 12, 26: The value of the attribute logical_identifier must start with either: urn:nasa:pds: or urn:esa:psa: or urn:jaxa:darts: or urn:ros:rssa: or urn:isro:isda:
         1 product validation(s) completed
 
@@ -45,5 +45,5 @@ Summary:
     1            error.label.schematron
 
 End of Report
-Completed execution in 4180 ms
+Completed execution in 3937 ms
 
