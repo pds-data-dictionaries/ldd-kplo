@@ -2,9 +2,6 @@
 <?xml-model 
     href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1L00.sch"
     schematypens="http://purl.oclc.org/dsdl/schematron"?>
-
-<!-- 12/19/2023 IMG Initial version from ASU schema template -->
-
 <Ingest_LDD 
     xmlns="http://pds.nasa.gov/pds4/pds/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
@@ -20,6 +17,8 @@
         The KPLO dictionary contains classes that describe aspects of the 
         Korea Pathfinder Lunar Orbiter mission and related instruments.
     </comment>
+
+    <!-- 12/19/2023 IMG Initial version from ASU schema template -->
     <last_modification_date_time>2024-01-31T00:00Z</last_modification_date_time>
 
 <!-- Attribute Definitions (alphabetical) -->
