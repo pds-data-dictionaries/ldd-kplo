@@ -7,7 +7,7 @@ Configuration:
    LDD Discipline (T/F):  false
    LDD Namespace URL:     http://tbd
    LDD URN Prefix:        urn:kari:kpds:
-   Time                   Wed Feb 14 17:27:47 UTC 2024
+   Time                   Wed Feb 14 23:07:18 UTC 2024
    Common Schema          [PDS4_PDS_1L00.xsd]
    Common Schematron      [PDS4_PDS_1L00.sch]
    IM Version Id:         1.21.0.0
@@ -155,7 +155,7 @@ Parsed Input - Attributes:
 
    name                   execution_spacecraft_time
    version                1.21
-   value data type        ASCII_Date_Time_YMD
+   value data type        ASCII_Short_String_Collapsed
    description            The spacecraft time of when the image command was executed. Use this time with the SCLK kernel and add the start_time_offset value for the most accurate image start. 
 
    name                   execution_time
