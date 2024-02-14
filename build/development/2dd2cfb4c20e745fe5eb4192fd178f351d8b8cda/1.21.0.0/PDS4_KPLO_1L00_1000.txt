@@ -7,7 +7,7 @@ Configuration:
    LDD Discipline (T/F):  false
    LDD Namespace URL:     http://tbd
    LDD URN Prefix:        urn:kari:kpds:
-   Time                   Tue Feb 13 19:01:43 UTC 2024
+   Time                   Wed Feb 14 17:27:47 UTC 2024
    Common Schema          [PDS4_PDS_1L00.xsd]
    Common Schematron      [PDS4_PDS_1L00.sch]
    IM Version Id:         1.21.0.0
