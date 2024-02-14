@@ -323,9 +323,10 @@
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Date_Time_YMD</value_data_type>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <pattern>([0-9]{1,2}/)?[0-9]{1,10}([:|.][0-9]{1,9})?</pattern>
         </DD_Value_Domain>
-    </DD_Attribute>
+    </DD_Attribute> 
 
     <DD_Attribute> <!-- execution_time -->
         <name>execution_time</name>
