@@ -19,7 +19,9 @@
     </comment>
 
     <!-- 12/19/2023 IMG Initial version from ASU schema template -->
-    <last_modification_date_time>2024-01-31T00:00Z</last_modification_date_time>
+    <!-- 02/28/2024 Added LUTI parameters from label examples -->
+    
+    <last_modification_date_time>2024-02-28T11:00Z</last_modification_date_time>
 
 <!-- Attribute Definitions (alphabetical) -->
 
@@ -114,6 +116,19 @@
         </DD_Value_Domain>
     </DD_Attribute>
 
+    <DD_Attribute> <!-- bit_selection for LUTI A-->
+        <name>bit_selection</name>
+        <version_id>1.0</version_id>
+        <local_identifier>kplo.bit_selection</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>LUTI A bit selection flag</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+ 
     <DD_Attribute> <!-- bterm1 -->
         <name>bterm1</name>
         <version_id>1.0</version_id>
@@ -183,7 +198,22 @@
             <value_data_type>ASCII_Integer</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
-
+    
+    <DD_Attribute> <!-- ccd_direction for LUTI A -->
+        <name>ccd_direction</name>
+        <version_id>1.0</version_id>
+        <local_identifier>kplo.ccd_direction</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>
+            Direction of the recording CCD defined for LUTI A.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
     <DD_Attribute> <!-- data_quality_desc -->
         <name>data_quality_desc</name>
         <version_id>1.0</version_id>
@@ -346,6 +376,19 @@
         </DD_Value_Domain>
     </DD_Attribute>
 
+    <DD_Attribute> <!-- frame_id --> 
+        <name>frame_id</name>
+        <version_id>1.0</version_id>
+        <local_identifier>kplo.frame_id</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Records if the image was LUTI A</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
     <DD_Attribute> <!-- gain_ch0 -->
         <name>gain_ch0</name>
         <version_id>1.0</version_id>
@@ -451,6 +494,22 @@
         </DD_Value_Domain>
     </DD_Attribute>
 
+    <DD_Attribute> <!-- line_integration_time for LUTI A --> 
+        <name>line_integration_time</name>
+        <version_id>1.0</version_id>
+        <local_identifier>kplo.line_integration_time</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>
+            The line integration time in milliseconds.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
     <DD_Attribute> <!-- line_rate_code --> 
         <name>line_rate_code</name>
         <version_id>1.0</version_id>
@@ -483,7 +542,38 @@
 			<unit_of_measure_type>Units_of_Time</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
+    <DD_Attribute> <!-- lutia_constant_time_offset --> 
+        <name>lutia_constant_time_offset</name>
+        <version_id>1.0</version_id>
+        <local_identifier>kplo.lutia_constant_time_offset</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>
+            Constant time offset for LUTI A in seconds.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- luti_target_id --> 
+        <name>luti_target_id</name>
+        <version_id>1.0</version_id>
+        <local_identifier>kplo.luti_target_id</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>
+            LUTI target ID.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
     <DD_Attribute> <!-- mission_phase_name -->
         <name>mission_phase_name</name>
         <version_id>1.0</version_id>
@@ -620,7 +710,38 @@
             <value_data_type>ASCII_Integer</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
+    <DD_Attribute>
+        <name>orbit_number</name>
+        <version_id>1.0</version_id>
+        <local_identifier>kplo.orbit_number</local_identifier>
+        <nillable_flag>true</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>The orbit_number attribute identifies the number of the orbital revolution of the spacecraft 
+            around the Moon.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+            <minimum_value>0</minimum_value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- pre_scan_mode_selection for LUTI A -->
+        <name>pre_scan_mode_selection</name>
+        <version_id>1.0</version_id>
+        <local_identifier>kplo.pre_scan_mode_selection</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>
+            pre-scan defined mode selection for LUTI A
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
     <DD_Attribute> <!-- preroll_lines -->
         <name>preroll_lines</name>
         <version_id>1.0</version_id>
@@ -699,7 +820,40 @@
             <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
+
+    <DD_Attribute> <!-- spacecraft_clock_start_count -->
+        <name>spacecraft_clock_start_count</name>
+        <version_id>1.0</version_id>
+        <local_identifier>kplo.spacecraft_clock_start_count</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>The spacecraft_clock_start_count attribute provides the value 
+            of the spacecraft clock at the beginning of a time period of 
+            interest.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <pattern>([0-9]{1,2}/)?[0-9]{1,10}([:|.][0-9]{1,9})?</pattern>
+        </DD_Value_Domain>
+    </DD_Attribute>  
     
+    <DD_Attribute> <!-- spacecraft_clock_stop_count -->
+        <name>spacecraft_clock_stop_count</name>
+        <version_id>1.0</version_id>
+        <local_identifier>kplo.spacecraft_clock_stop_count</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>The spacecraft_clock_stop_count attribute provides the value of the spacecraft 
+            clock at the beginning of a time period of interest.
+        </definition>    
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <pattern>([0-9]{1,2}/)?[0-9]{1,10}([:|.][0-9]{1,9})?</pattern>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
     <DD_Attribute> <!-- start_time_offset --> 
         <name>start_time_offset</name>
         <version_id>1.0</version_id>
@@ -1216,7 +1370,80 @@
         </DD_Association>
      </DD_Class>
     <!-- End of SHADOWCAM_Parameters Class definition -->
+
+    <!-- Beginning of LUTI_Parameters Class definition -->
+
+    <DD_Class> <!-- LUTI_Parameters -->
+        <name>LUTI_Parameters</name>
+        <version_id>1.0</version_id>
+        <local_identifier>kplo.LUTI_Parameters</local_identifier>
+        <submitter_name>IMG</submitter_name>
+        <definition>The LUTI_Parameters class is the container for Lunar Terrain Imager (LUTI) specific observation parameters.</definition>
+        <DD_Association>
+            <identifier_reference>kplo.rationale_desc</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>kplo.luti_target_id</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>kplo.frame_id</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>kplo.lutia_constant_time_offset</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>kplo.spacecraft_clock_start_count</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>kplo.spacecraft_clock_stop_count</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>kplo.line_integration_time</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>kplo.ccd_direction</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>kplo.bit_selection</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>kplo.pre_scan_mode_selection</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+
+    <!-- End of LUTI_Parameters Class definition -->
     
+
     <!-- Beginning of KPLO_Parameters Class definition with attributes in the order as they appear in the label -->
     <DD_Class> <!-- KPLO_Parameters -->
         <name>KPLO_Parameters</name>
@@ -1239,6 +1466,12 @@
             <maximum_occurrences>unbounded</maximum_occurrences>
         </DD_Association>
         <DD_Association>
+            <identifier_reference>kplo.orbit_number</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
             <identifier_reference>kplo.producer_institution_name</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
@@ -1246,6 +1479,12 @@
         </DD_Association>
         <DD_Association>
             <identifier_reference>kplo.SHADOWCAM_Parameters</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>kplo.LUTI_Parameters</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
