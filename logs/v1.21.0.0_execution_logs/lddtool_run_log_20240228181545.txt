@@ -3,7 +3,7 @@
 >>  INFO IM Version Id: 1.21.0.0
 >>  INFO IM Namespace Id: pds
 >>  INFO IM Label Version Id: 1.27
->>  INFO Date: Wed Feb 14 23:07:18 UTC 2024
+>>  INFO Date: Wed Feb 28 18:15:49 UTC 2024
 >>  INFO PARENT_DIR: /tmp/lddtool-14.3.0
 >>  INFO SCRIPT_DIR: /tmp/lddtool-14.3.0/bin
 >>  INFO LIB_DIR: /tmp/lddtool-14.3.0/lib
@@ -11,6 +11,8 @@
 >>> INFO Init:  - Config.Properties Namespace Id Found:kplo
 >>> INFO Init:  - Config.Properties Namespace Id Using:kplo
 >>> INFO Init:  - LDD Dictionary_Type is Mission
+>>> INFO Attribute: <orbit_number> - A 'nillable' attribute was found that is not a required attribute in at least one class.
+>>> INFO Attribute: <orbit_number> - The default minimum value provided by the attribute's data type is being overridden with 0
 
  -- LDDTool Execution Summary --
      0 warning(s)

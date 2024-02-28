@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:kplo  Version:1.0.0.0 - Wed Feb 14 23:07:18 UTC 2024 -->
+  <!-- PDS4 Schematron for Name Space Id:kplo  Version:1.0.0.0 - Wed Feb 28 18:15:49 UTC 2024 -->
   <!-- Generated from the PDS4 Information Model Version 1.21.0.0 - System Build 14.0 -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -23,6 +23,20 @@
       <sch:assert test=". = ('commissioning', 'cruise', 'extended', 'nominal')">
         <title>kplo:KPLO_Parameters/kplo:mission_phase_name/kplo:mission_phase_name</title>
         The attribute kplo:KPLO_Parameters/kplo:mission_phase_name must be equal to one of the following values 'commissioning', 'cruise', 'extended', 'nominal'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="kplo:LUTI_Parameters/kplo:line_integration_time">
+      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr')">
+        <title>kplo:LUTI_Parameters/kplo:line_integration_time/kplo:line_integration_time</title>
+        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="kplo:LUTI_Parameters/kplo:lutia_constant_time_offset">
+      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr')">
+        <title>kplo:LUTI_Parameters/kplo:lutia_constant_time_offset/kplo:lutia_constant_time_offset</title>
+        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
