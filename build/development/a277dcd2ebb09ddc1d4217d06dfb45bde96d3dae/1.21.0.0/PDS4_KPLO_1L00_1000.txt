@@ -7,7 +7,7 @@ Configuration:
    LDD Discipline (T/F):  false
    LDD Namespace URL:     http://tbd
    LDD URN Prefix:        urn:kari:kpds:
-   Time                   Wed Feb 14 23:07:18 UTC 2024
+   Time                   Wed Feb 28 18:15:49 UTC 2024
    Common Schema          [PDS4_PDS_1L00.xsd]
    Common Schematron      [PDS4_PDS_1L00.sch]
    IM Version Id:         1.21.0.0
@@ -29,9 +29,9 @@ Parameters:
    Merge with Master      false
 
 Summary:
-   Classes                2
-   Attributes             55
-   Associations           57
+   Classes                3
+   Attributes             65
+   Associations           69
    Error messages         0
    Warning messages       0
    Information messages   0
@@ -48,7 +48,7 @@ Parsed Input - Header:
         The KPLO dictionary contains classes that describe aspects of the 
         Korea Pathfinder Lunar Orbiter mission and related instruments.
     
-   Last Modification Time 2024-01-31T00:00Z
+   Last Modification Time 2024-02-28T11:00Z
    PDS4 Merge Flag        false
 
 Parsed Input - Attributes:
@@ -88,6 +88,11 @@ Parsed Input - Attributes:
    value data type        ASCII_Integer
    description            Difference between the max and min bias 12-bit DN value for channel 5.
 
+   name                   bit_selection
+   version                1.21
+   value data type        ASCII_Integer
+   description            LUTI A bit selection flag
+
    name                   bterm1
    version                1.21
    value data type        ASCII_Integer
@@ -112,6 +117,11 @@ Parsed Input - Attributes:
    version                1.21
    value data type        ASCII_Integer
    description            ShadowCam companding bterm 5 (See appendix in the ShadowCam archive SIS for detailed companding information)
+
+   name                   ccd_direction
+   version                1.21
+   value data type        ASCII_Integer
+   description             Direction of the recording CCD defined for LUTI A. 
 
    name                   data_quality_desc
    version                1.21
@@ -163,6 +173,11 @@ Parsed Input - Attributes:
    value data type        ASCII_Date_Time_YMD
    description            The UTC time and date at the execution of the image acquisition command. Add the start time offset to this time to get the start of the image data. Use the spacecraft clock version of the time with an SCLK kernel for the most accurate timing. 
 
+   name                   frame_id
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Records if the image was LUTI A
+
    name                   gain_ch0
    version                1.21
    value data type        ASCII_Integer
@@ -198,6 +213,12 @@ Parsed Input - Attributes:
    value data type        ASCII_Integer
    description             The number of 1024-line image chunks commanded (includes preroll). 
 
+   name                   line_integration_time
+   version                1.21
+   value data type        ASCII_Real
+   description             The line integration time in milliseconds. 
+   unit of measure type   Units_of_Time
+
    name                   line_rate_code
    version                1.21
    value data type        ASCII_Integer
@@ -208,6 +229,17 @@ Parsed Input - Attributes:
    value data type        ASCII_Real
    description             The TDI line rate in milliseconds, the effective exposure time is multiplied by 32 for the number of TDI stages. 
    unit of measure type   Units_of_Time
+
+   name                   lutia_constant_time_offset
+   version                1.21
+   value data type        ASCII_Real
+   description             Constant time offset for LUTI A in seconds. 
+   unit of measure type   Units_of_Time
+
+   name                   luti_target_id
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description             LUTI target ID. 
 
    name                   mission_phase_name
    version                1.21
@@ -249,6 +281,18 @@ Parsed Input - Attributes:
    value data type        ASCII_Integer
    description             The analog front end offset for channel 5. 
 
+   name                   orbit_number
+   version                1.21
+   value data type        ASCII_Integer
+   description            The orbit_number attribute identifies the number of the orbital revolution of the spacecraft around the Moon. 
+   nillable               true
+   minimum value          0
+
+   name                   pre_scan_mode_selection
+   version                1.21
+   value data type        ASCII_Integer
+   description             pre-scan defined mode selection for LUTI A 
+
    name                   preroll_lines
    version                1.21
    value data type        ASCII_Integer
@@ -273,6 +317,16 @@ Parsed Input - Attributes:
    version                1.21
    value data type        ASCII_Short_String_Collapsed
    description             Any available commentary on the goal of the observation. This is created at planning time, and specific instrument and spacecraft performance may impact if the resulting image meets the original goal or not. 
+
+   name                   spacecraft_clock_start_count
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            The spacecraft_clock_start_count attribute provides the value of the spacecraft clock at the beginning of a time period of interest. 
+
+   name                   spacecraft_clock_stop_count
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            The spacecraft_clock_stop_count attribute provides the value of the spacecraft clock at the beginning of a time period of interest. 
 
    name                   start_time_offset
    version                1.21
@@ -609,6 +663,64 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        attribute_of
 
+   name                   LUTI_Parameters
+   description            The LUTI_Parameters class is the container for Lunar Terrain Imager (LUTI) specific observation parameters.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      kplo.rationale_desc
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.luti_target_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.frame_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.lutia_constant_time_offset
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.spacecraft_clock_start_count
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.spacecraft_clock_stop_count
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.line_integration_time
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.ccd_direction
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.bit_selection
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.pre_scan_mode_selection
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
    name                   KPLO_Parameters
    description            The KPLO_Parameters class is the container for mission-specific metadata elements.
    is abstract            false
@@ -627,12 +739,22 @@ Parsed Input - Classes:
       maximum occurrences   unbounded
       reference type        attribute_of
 
+      local identifier      kplo.orbit_number
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
       local identifier      kplo.producer_institution_name
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
       local identifier      kplo.SHADOWCAM_Parameters
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      kplo.LUTI_Parameters
       minimum occurrences   0
       maximum occurrences   1
       reference type        component_of
