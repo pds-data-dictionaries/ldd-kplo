@@ -7,7 +7,7 @@ Configuration:
    LDD Discipline (T/F):  false
    LDD Namespace URL:     http://tbd
    LDD URN Prefix:        urn:kari:kpds:
-   Time                   Thu Feb 29 23:18:51 UTC 2024
+   Time                   Thu Feb 29 23:30:51 UTC 2024
    Common Schema          [PDS4_PDS_1L00.xsd]
    Common Schematron      [PDS4_PDS_1L00.sch]
    IM Version Id:         1.21.0.0
@@ -48,7 +48,7 @@ Parsed Input - Header:
         The KPLO dictionary contains classes that describe aspects of the 
         Korea Pathfinder Lunar Orbiter mission and related instruments.
     
-   Last Modification Time 2024-02-28T11:00Z
+   Last Modification Time 2024-02-28T14:28Z
    PDS4 Merge Flag        false
 
 Parsed Input - Attributes:
@@ -663,8 +663,8 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        attribute_of
 
-   name                   LUTI_Parameters
-   description            The LUTI_Parameters class is the container for Lunar Terrain Imager (LUTI) specific observation parameters.
+   name                   LUTIA_Parameters
+   description            The LUTIA_Parameters class is the container for Lunar Terrain Imager A (LUTIA) specific observation parameters.
    is abstract            false
    is choice              false
    subclass of            USER
@@ -754,7 +754,7 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        component_of
 
-      local identifier      kplo.LUTI_Parameters
+      local identifier      kplo.LUTIA_Parameters
       minimum occurrences   0
       maximum occurrences   1
       reference type        component_of
