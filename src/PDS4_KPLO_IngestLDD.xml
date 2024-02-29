@@ -817,7 +817,7 @@
 	    </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <value_data_type>ASCII_Text_Preserved</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
 
