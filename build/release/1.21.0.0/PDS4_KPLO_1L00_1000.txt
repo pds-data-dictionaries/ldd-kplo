@@ -7,7 +7,7 @@ Configuration:
    LDD Discipline (T/F):  false
    LDD Namespace URL:     http://tbd
    LDD URN Prefix:        urn:kari:kpds:
-   Time                   Wed Feb 28 18:15:49 UTC 2024
+   Time                   Thu Feb 29 23:18:51 UTC 2024
    Common Schema          [PDS4_PDS_1L00.xsd]
    Common Schematron      [PDS4_PDS_1L00.sch]
    IM Version Id:         1.21.0.0
@@ -315,7 +315,7 @@ Parsed Input - Attributes:
 
    name                   rationale_desc
    version                1.21
-   value data type        ASCII_Short_String_Collapsed
+   value data type        ASCII_Text_Preserved
    description             Any available commentary on the goal of the observation. This is created at planning time, and specific instrument and spacecraft performance may impact if the resulting image meets the original goal or not. 
 
    name                   spacecraft_clock_start_count
