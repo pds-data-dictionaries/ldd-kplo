@@ -19,9 +19,9 @@
     </comment>
 
     <!-- 12/19/2023 IMG Initial version from ASU schema template -->
-    <!-- 02/28/2024 Added LUTI parameters from label examples -->
+    <!-- 02/29/2024 Added LUTI "A" parameters from label examples, assume LUTI "B" is coming -->
     
-    <last_modification_date_time>2024-02-28T11:00Z</last_modification_date_time>
+    <last_modification_date_time>2024-02-28T14:28Z</last_modification_date_time>
 
 <!-- Attribute Definitions (alphabetical) -->
 
@@ -1371,14 +1371,14 @@
      </DD_Class>
     <!-- End of SHADOWCAM_Parameters Class definition -->
 
-    <!-- Beginning of LUTI_Parameters Class definition -->
+    <!-- Beginning of LUTIA_Parameters Class definition -->
 
-    <DD_Class> <!-- LUTI_Parameters -->
-        <name>LUTI_Parameters</name>
+    <DD_Class>
+        <name>LUTIA_Parameters</name>
         <version_id>1.0</version_id>
-        <local_identifier>kplo.LUTI_Parameters</local_identifier>
+        <local_identifier>kplo.LUTIA_Parameters</local_identifier>
         <submitter_name>IMG</submitter_name>
-        <definition>The LUTI_Parameters class is the container for Lunar Terrain Imager (LUTI) specific observation parameters.</definition>
+        <definition>The LUTIA_Parameters class is the container for Lunar Terrain Imager A (LUTIA) specific observation parameters.</definition>
         <DD_Association>
             <identifier_reference>kplo.rationale_desc</identifier_reference>
             <reference_type>attribute_of</reference_type>
@@ -1441,7 +1441,7 @@
         </DD_Association>
     </DD_Class>
 
-    <!-- End of LUTI_Parameters Class definition -->
+    <!-- End of LUTIA_Parameters Class definition -->
     
 
     <!-- Beginning of KPLO_Parameters Class definition with attributes in the order as they appear in the label -->
@@ -1484,13 +1484,21 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
-            <identifier_reference>kplo.LUTI_Parameters</identifier_reference>
+            <identifier_reference>kplo.LUTIA_Parameters</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
+<!-- Place holder for LUTIB_Parameters
+        <DD_Association>
+            <identifier_reference>kplo.LUTIB_Parameters</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+-->
     </DD_Class>
     <!-- End of KPLO_Parameters Class definition -->
-<!-- End of class definitions -->
+    <!-- End of class definitions -->
     
 </Ingest_LDD>
