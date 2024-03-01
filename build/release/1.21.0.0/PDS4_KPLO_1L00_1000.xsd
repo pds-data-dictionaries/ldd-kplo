@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:kplo  Version:1.0.0.0 - Wed Feb 28 18:15:49 UTC 2024 -->
+  <!-- PDS4 XML/Schema for Name Space Id:kplo  Version:1.0.0.0 - Thu Feb 29 23:30:51 UTC 2024 -->
   <!-- Generated from the PDS4 Information Model Version 1.21.0.0 - System Build 14.0 -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
@@ -39,17 +39,17 @@
       <xs:element name="orbit_number" nillable="true" type="kplo:orbit_number" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="producer_institution_name" type="kplo:producer_institution_name" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="SHADOWCAM_Parameters" type="kplo:SHADOWCAM_Parameters" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="LUTI_Parameters" type="kplo:LUTI_Parameters" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="LUTIA_Parameters" type="kplo:LUTIA_Parameters" minOccurs="0" maxOccurs="1"> </xs:element>
     </xs:sequence>
     <!-- Begin assert statements for schematron - Enumerated Values -->
     <!-- <xs:assert test="kplo:mission_phase_name = ('commissioning', 'cruise', 'extended', 'nominal')"/> -->
     <!-- End assert statements for schematron - Enumerated Values -->
   </xs:complexType>
 
-  <xs:complexType name="LUTI_Parameters">
+  <xs:complexType name="LUTIA_Parameters">
     <xs:annotation>
-      <xs:documentation>The LUTI_Parameters class is the container for
-        Lunar Terrain Imager (LUTI) specific observation
+      <xs:documentation>The LUTIA_Parameters class is the container for
+        Lunar Terrain Imager A (LUTIA) specific observation
         parameters.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -748,9 +748,8 @@
         resulting image meets the original goal or not.
         </xs:documentation>
     </xs:annotation>
-    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+    <xs:restriction base="pds:ASCII_Text_Preserved">
      <xs:minLength value="1"/>
-     <xs:maxLength value="255"/>
 	   </xs:restriction>
   </xs:simpleType>
 
