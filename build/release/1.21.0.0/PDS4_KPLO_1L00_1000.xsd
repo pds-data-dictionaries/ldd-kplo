@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:kplo  Version:1.0.0.0 - Thu Feb 29 23:30:51 UTC 2024 -->
+  <!-- PDS4 XML/Schema for Name Space Id:kplo  Version:1.0.0.0 - Mon Mar 04 19:47:31 UTC 2024 -->
   <!-- Generated from the PDS4 Information Model Version 1.21.0.0 - System Build 14.0 -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
@@ -39,24 +39,24 @@
       <xs:element name="orbit_number" nillable="true" type="kplo:orbit_number" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="producer_institution_name" type="kplo:producer_institution_name" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="SHADOWCAM_Parameters" type="kplo:SHADOWCAM_Parameters" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="LUTIA_Parameters" type="kplo:LUTIA_Parameters" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="LUTI_Parameters" type="kplo:LUTI_Parameters" minOccurs="0" maxOccurs="1"> </xs:element>
     </xs:sequence>
     <!-- Begin assert statements for schematron - Enumerated Values -->
     <!-- <xs:assert test="kplo:mission_phase_name = ('commissioning', 'cruise', 'extended', 'nominal')"/> -->
     <!-- End assert statements for schematron - Enumerated Values -->
   </xs:complexType>
 
-  <xs:complexType name="LUTIA_Parameters">
+  <xs:complexType name="LUTI_Parameters">
     <xs:annotation>
-      <xs:documentation>The LUTIA_Parameters class is the container for
-        Lunar Terrain Imager A (LUTIA) specific observation
+      <xs:documentation>The LUTI_Parameters class is the container for
+        Lunar Terrain Imager A and B specific observation
         parameters.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="rationale_desc" type="kplo:rationale_desc" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="luti_target_id" type="kplo:luti_target_id" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="frame_id" type="kplo:frame_id" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="lutia_constant_time_offset" type="kplo:lutia_constant_time_offset" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="luti_constant_time_offset" type="kplo:luti_constant_time_offset" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="spacecraft_clock_start_count" type="kplo:spacecraft_clock_start_count" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="spacecraft_clock_stop_count" type="kplo:spacecraft_clock_stop_count" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="line_integration_time" type="kplo:line_integration_time" minOccurs="0" maxOccurs="1"> </xs:element>
@@ -551,6 +551,25 @@
     </xs:simpleContent>
   </xs:complexType>
 
+  <xs:simpleType name="luti_constant_time_offset_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="luti_constant_time_offset">
+    <xs:annotation>
+      <xs:documentation> Constant time offset for LUTI A and B in
+        seconds. </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="kplo:luti_constant_time_offset_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Time" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
   <xs:simpleType name="luti_target_id">
     <xs:annotation>
 <xs:documentation> LUTI target ID. </xs:documentation>
@@ -560,25 +579,6 @@
      <xs:maxLength value="255"/>
 	   </xs:restriction>
   </xs:simpleType>
-
-  <xs:simpleType name="lutia_constant_time_offset_WO_Units">
-    <xs:restriction base="pds:ASCII_Real">
-     <xs:minInclusive value="-1.7976931348623157e308"/>
-     <xs:maxInclusive value="1.7976931348623157e308"/>
-	   </xs:restriction>
-  </xs:simpleType>
-
-  <xs:complexType name="lutia_constant_time_offset">
-    <xs:annotation>
-      <xs:documentation> Constant time offset for LUTI A in seconds.
-        </xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="kplo:lutia_constant_time_offset_WO_Units">
-        <xs:attribute name="unit" type="pds:Units_of_Time" use="required" />
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
 
   <xs:simpleType name="mission_phase_name">
     <xs:annotation>

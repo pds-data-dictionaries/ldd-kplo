@@ -7,7 +7,7 @@ Configuration:
    LDD Discipline (T/F):  false
    LDD Namespace URL:     http://tbd
    LDD URN Prefix:        urn:kari:kpds:
-   Time                   Thu Feb 29 23:30:51 UTC 2024
+   Time                   Mon Mar 04 19:47:31 UTC 2024
    Common Schema          [PDS4_PDS_1L00.xsd]
    Common Schematron      [PDS4_PDS_1L00.sch]
    IM Version Id:         1.21.0.0
@@ -48,7 +48,7 @@ Parsed Input - Header:
         The KPLO dictionary contains classes that describe aspects of the 
         Korea Pathfinder Lunar Orbiter mission and related instruments.
     
-   Last Modification Time 2024-02-28T14:28Z
+   Last Modification Time 2024-03-04T12:45Z
    PDS4 Merge Flag        false
 
 Parsed Input - Attributes:
@@ -230,10 +230,10 @@ Parsed Input - Attributes:
    description             The TDI line rate in milliseconds, the effective exposure time is multiplied by 32 for the number of TDI stages. 
    unit of measure type   Units_of_Time
 
-   name                   lutia_constant_time_offset
+   name                   luti_constant_time_offset
    version                1.21
    value data type        ASCII_Real
-   description             Constant time offset for LUTI A in seconds. 
+   description             Constant time offset for LUTI A and B in seconds. 
    unit of measure type   Units_of_Time
 
    name                   luti_target_id
@@ -663,8 +663,8 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        attribute_of
 
-   name                   LUTIA_Parameters
-   description            The LUTIA_Parameters class is the container for Lunar Terrain Imager A (LUTIA) specific observation parameters.
+   name                   LUTI_Parameters
+   description            The LUTI_Parameters class is the container for Lunar Terrain Imager A and B specific observation parameters.
    is abstract            false
    is choice              false
    subclass of            USER
@@ -686,7 +686,7 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      kplo.lutia_constant_time_offset
+      local identifier      kplo.luti_constant_time_offset
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
@@ -754,7 +754,7 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        component_of
 
-      local identifier      kplo.LUTIA_Parameters
+      local identifier      kplo.LUTI_Parameters
       minimum occurrences   0
       maximum occurrences   1
       reference type        component_of
