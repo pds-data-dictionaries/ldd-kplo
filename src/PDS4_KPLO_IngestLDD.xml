@@ -20,9 +20,9 @@
 
     <!-- 12/19/2023 IMG Initial version from ASU schema template -->
     <!-- 02/29/2024 Added LUTI "A" parameters from label examples, assume LUTI "B" is coming -->
-    <!-- 03/04/2024 Team only needs "LUTI" for both "A" and "B", renamed to LUTI_Parameters -->
+    <!-- 03/04/2024 Team only needs "LUTI" for both "A"/"B" instruments, renamed to LUTI_Parameters -->
     
-    <last_modification_date_time>2024-03-04T12:45Z</last_modification_date_time>
+    <last_modification_date_time>2024-03-04T11:03Z</last_modification_date_time>
 
 <!-- Attribute Definitions (alphabetical) -->
 

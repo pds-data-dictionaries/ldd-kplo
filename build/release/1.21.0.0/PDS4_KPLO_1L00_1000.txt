@@ -7,7 +7,7 @@ Configuration:
    LDD Discipline (T/F):  false
    LDD Namespace URL:     http://tbd
    LDD URN Prefix:        urn:kari:kpds:
-   Time                   Mon Mar 04 19:47:31 UTC 2024
+   Time                   Mon Mar 04 20:05:15 UTC 2024
    Common Schema          [PDS4_PDS_1L00.xsd]
    Common Schematron      [PDS4_PDS_1L00.sch]
    IM Version Id:         1.21.0.0
@@ -48,7 +48,7 @@ Parsed Input - Header:
         The KPLO dictionary contains classes that describe aspects of the 
         Korea Pathfinder Lunar Orbiter mission and related instruments.
     
-   Last Modification Time 2024-03-04T12:45Z
+   Last Modification Time 2024-03-04T11:03Z
    PDS4 Merge Flag        false
 
 Parsed Input - Attributes:
