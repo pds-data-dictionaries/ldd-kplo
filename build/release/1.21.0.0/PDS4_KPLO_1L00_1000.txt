@@ -1,13 +1,13 @@
 PDS4 Local Data Dictionary Processing Report
 
 Configuration:
-   LDDTool Version        14.3.0
+   LDDTool Version        14.4.0-SNAPSHOT
    LDD Version Id:        1.0.0.0
    LDD Label Version Id:  1.27
    LDD Discipline (T/F):  false
-   LDD Namespace URL:     http://tbd
+   LDD Namespace URL:     http://www.kari.re.kr/kpds
    LDD URN Prefix:        urn:kari:kpds:
-   Time                   Mon Mar 04 20:05:15 UTC 2024
+   Time                   Fri Mar 08 10:15:00 PST 2024
    Common Schema          [PDS4_PDS_1L00.xsd]
    Common Schematron      [PDS4_PDS_1L00.sch]
    IM Version Id:         1.21.0.0
@@ -20,7 +20,7 @@ Configuration:
    IM Document Spec       [DMDocument.pins]
 
 Parameters:
-   Input File             [/home/runner/work/ldd-kplo/ldd-kplo/src/PDS4_KPLO_IngestLDD.xml]
+   Input File             [../ldd-kplo/src/PDS4_KPLO_IngestLDD.xml]
    PDS Processing         true
    LDD Processing         true
    Discipline LDD         false
