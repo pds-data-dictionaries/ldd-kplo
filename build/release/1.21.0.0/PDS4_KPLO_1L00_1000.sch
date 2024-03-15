@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:kplo  Version:1.0.0.0 - Thu Mar 14 19:11:22 PDT 2024 -->
+  <!-- PDS4 Schematron for Name Space Id:kplo  Version:1.0.0.0 - Thu Mar 14 19:30:14 PDT 2024 -->
   <!-- Generated from the PDS4 Information Model Version 1.21.0.0 - System Build 14.0 -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -8,7 +8,7 @@
 
   <sch:ns uri="http://www.w3.org/2001/XMLSchema-instance" prefix="xsi"/>
   <sch:ns uri="http://pds.nasa.gov/pds4/pds/v1" prefix="pds"/>
-  <sch:ns uri="http://www.kari.re.kr/kpdsmission/kplo/v1" prefix="kplo"/>
+  <sch:ns uri="http://www.kari.re.kr/kpds/mission/kplo/v1" prefix="kplo"/>
 
 		   <!-- ================================================ -->
 		   <!-- NOTE:  There are two types of schematron rules.  -->
