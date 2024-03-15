@@ -1,13 +1,13 @@
 PDS4 Local Data Dictionary Processing Report
 
 Configuration:
-   LDDTool Version        14.4.0-SNAPSHOT
+   LDDTool Version        14.5.0-SNAPSHOT
    LDD Version Id:        1.0.0.0
    LDD Label Version Id:  1.27
    LDD Discipline (T/F):  false
    LDD Namespace URL:     http://www.kari.re.kr/kpds
    LDD URN Prefix:        urn:kari:kpds:
-   Time                   Fri Mar 08 10:15:00 PST 2024
+   Time                   Thu Mar 14 19:11:22 PDT 2024
    Common Schema          [PDS4_PDS_1L00.xsd]
    Common Schematron      [PDS4_PDS_1L00.sch]
    IM Version Id:         1.21.0.0
