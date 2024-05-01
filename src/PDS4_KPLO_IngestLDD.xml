@@ -8,7 +8,7 @@
     xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1
                         http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1L00.xsd">
     <name>KPLO</name>
-    <ldd_version_id>1.0.0.0</ldd_version_id>
+    <ldd_version_id>1.0.1.0</ldd_version_id>
     <dictionary_type>Mission</dictionary_type>
     <full_name>Trent Hare</full_name>
     <steward_id>img</steward_id>
@@ -21,8 +21,11 @@
     <!-- 12/19/2023 IMG Initial version from ASU schema template -->
     <!-- 02/29/2024 Added LUTI "A" parameters from label examples, assume LUTI "B" is coming -->
     <!-- 03/04/2024 Team only needs "LUTI" for both "A"/"B" instruments, renamed to LUTI_Parameters -->
+    <!-- 05/01/2024 LUTI team updates, removes luti_target_id for luti_target_type and adds luti_target_name
+                    and luti_quality_id. Updates to several definitions for LUTI.
+    -->                
     
-    <last_modification_date_time>2024-03-04T11:03Z</last_modification_date_time>
+    <last_modification_date_time>2024-05-01T16:48Z</last_modification_date_time>
 
 <!-- Attribute Definitions (alphabetical) -->
 
@@ -123,13 +126,16 @@
         <local_identifier>kplo.bit_selection</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-        <definition>LUTI A bit selection flag</definition>
+        <definition>The ADC bit selection is for the used bit range flag. 
+            The value 0 is for bit range 11 ~ 0 and detectable range 0~4095, the value 1 is for bit range 12 ~ 1 and 
+            detectable range 0~8190, and the value 2 is for bit range 13 ~ 2 and detectable range 0~16380.     
+        </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
- 
+
     <DD_Attribute> <!-- bterm1 -->
         <name>bterm1</name>
         <version_id>1.0</version_id>
@@ -200,14 +206,16 @@
         </DD_Value_Domain>
     </DD_Attribute>
     
-    <DD_Attribute> <!-- ccd_direction for LUTI A -->
+    <DD_Attribute> <!-- ccd_direction for LUTI -->
         <name>ccd_direction</name>
         <version_id>1.0</version_id>
         <local_identifier>kplo.ccd_direction</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
         <definition>
-            Direction of the recording CCD defined for LUTI A.
+            The CCD direction parameter defines the direction of CCD reading. The value 0 is for the 
+            reading direction from 1st pixel to 2048th pixel (default) and the value 1 is from the 
+            reading direction from 2048th pixel to 1st pixel.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -383,7 +391,7 @@
         <local_identifier>kplo.frame_id</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-        <definition>Records if the image was LUTI A</definition>
+        <definition>Records if the image was LUTI A or B</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
@@ -495,7 +503,7 @@
         </DD_Value_Domain>
     </DD_Attribute>
 
-    <DD_Attribute> <!-- line_integration_time for LUTI A --> 
+    <DD_Attribute> <!-- line_integration_time for LUTI --> 
         <name>line_integration_time</name>
         <version_id>1.0</version_id>
         <local_identifier>kplo.line_integration_time</local_identifier>
@@ -551,7 +559,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
         <definition>
-            Constant time offset for LUTI A and B in seconds.
+            Constant time offset for LUTI A or B in seconds.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -560,14 +568,33 @@
         </DD_Value_Domain>
     </DD_Attribute>
 
-    <DD_Attribute> <!-- luti_target_id --> 
-        <name>luti_target_id</name>
+    <DD_Attribute> <!-- luti_quality_id -->
+        <name>luti_quality_id</name>
         <version_id>1.0</version_id>
-        <local_identifier>kplo.luti_target_id</local_identifier>
+        <local_identifier>kplo.luti_quality_id</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
         <definition>
-            LUTI target ID.
+            For LUTI, the quality ID represents the error status of the image. 0: No error, 1: CRC error, 
+            2: CRC error + compression/decompression error.  
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- luti_target_type --> 
+        <name>luti_target_type</name>
+        <version_id>1.0</version_id>
+        <local_identifier>kplo.luti_target_type</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>
+            The luti target type is for LUTI target type such as MLND (Lunar surface, moon landing candidates),
+            MMMO (man made objects), MCRT (lunar craters), MPIT (lunar pits), CGEO (calibration target for geocal),
+            CDRK (dark), CLIM(lunar limb), LSLT (side slither), CSTA (star image), SERT 
+            (special targets for the earth), SPLT (planets), and SMS1 and SMS2 (special lunar surface image).
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -575,6 +602,21 @@
         </DD_Value_Domain>
     </DD_Attribute>
 
+    <DD_Attribute> <!-- luti_target_name --> 
+        <name>luti_target_name</name>
+        <version_id>1.0</version_id>
+        <local_identifier>kplo.luti_target_name</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>
+            The luti target name indicates the name of target areas if it is available. If it is not, it will show NA.  
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
     <DD_Attribute> <!-- mission_phase_name -->
         <name>mission_phase_name</name>
         <version_id>1.0</version_id>
@@ -728,14 +770,16 @@
         </DD_Value_Domain>
     </DD_Attribute>
 
-    <DD_Attribute> <!-- pre_scan_mode_selection for LUTI A -->
+    <DD_Attribute> <!-- pre_scan_mode_selection for LUTI -->
         <name>pre_scan_mode_selection</name>
         <version_id>1.0</version_id>
         <local_identifier>kplo.pre_scan_mode_selection</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
         <definition>
-            pre-scan defined mode selection for LUTI A
+            The pre scan mode selection flag is set by ground command. Default value is 1. 
+            The value 0 is for disable of use of pre-scan pixel and the value 1 is to use averaged value of 
+            pre-scan pixel and the value 2 is to use constant offset value predefined.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -1387,10 +1431,16 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
-            <identifier_reference>kplo.luti_target_id</identifier_reference>
+            <identifier_reference>kplo.luti_target_type</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>kplo.luti_target_name</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
         </DD_Association>
         <DD_Association>
             <identifier_reference>kplo.frame_id</identifier_reference>
@@ -1436,6 +1486,12 @@
         </DD_Association>
         <DD_Association>
             <identifier_reference>kplo.pre_scan_mode_selection</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>kplo.luti_quality_id</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
