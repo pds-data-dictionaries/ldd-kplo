@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:kplo  Version:1.0.0.0 - Mon Mar 04 20:05:15 UTC 2024 -->
+  <!-- PDS4 XML/Schema for Name Space Id:kplo  Version:1.0.1.0 - Wed May 01 23:52:41 UTC 2024 -->
   <!-- Generated from the PDS4 Information Model Version 1.21.0.0 - System Build 14.0 -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
   <!--               Dictionary Stack                                            -->
   <!-- 1.21.0.0 - pds: - Common Dictionary                                       -->
-  <!-- 1.0.0.0 - kplo: - KPLO                                                    -->
+  <!-- 1.0.1.0 - kplo: - KPLO                                                    -->
   <!--                                                                           -->
   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    targetNamespace="http://tbdmission/kplo/v1"
-    xmlns:kplo="http://tbdmission/kplo/v1"
+    targetNamespace="http://www.kari.re.kr/kpds/mission/kplo/v1"
+    xmlns:kplo="http://www.kari.re.kr/kpds/mission/kplo/v1"
     xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
     elementFormDefault="qualified"
     attributeFormDefault="unqualified"
-    version="1.0.0.0">
+    version="1.0.1.0">
  
     <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1L00.xsd"/>
  
@@ -54,7 +54,8 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element name="rationale_desc" type="kplo:rationale_desc" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="luti_target_id" type="kplo:luti_target_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="luti_target_type" type="kplo:luti_target_type" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="luti_target_name" type="kplo:luti_target_name" minOccurs="0" maxOccurs="unbounded"> </xs:element>
       <xs:element name="frame_id" type="kplo:frame_id" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="luti_constant_time_offset" type="kplo:luti_constant_time_offset" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="spacecraft_clock_start_count" type="kplo:spacecraft_clock_start_count" minOccurs="0" maxOccurs="1"> </xs:element>
@@ -63,6 +64,7 @@
       <xs:element name="ccd_direction" type="kplo:ccd_direction" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="bit_selection" type="kplo:bit_selection" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="pre_scan_mode_selection" type="kplo:pre_scan_mode_selection" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="luti_quality_id" type="kplo:luti_quality_id" minOccurs="0" maxOccurs="1"> </xs:element>
     </xs:sequence>
   </xs:complexType>
 
@@ -217,7 +219,11 @@
 
   <xs:simpleType name="bit_selection">
     <xs:annotation>
-<xs:documentation>LUTI A bit selection flag</xs:documentation>
+      <xs:documentation>The ADC bit selection is for the used bit range
+        flag. The value 0 is for bit range 11 ~ 0 and detectable range
+        0~4095, the value 1 is for bit range 12 ~ 1 and detectable range
+        0~8190, and the value 2 is for bit range 13 ~ 2 and detectable
+        range 0~16380. </xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Integer">
      <xs:minInclusive value="-9223372036854775808"/>
@@ -287,8 +293,11 @@
 
   <xs:simpleType name="ccd_direction">
     <xs:annotation>
-      <xs:documentation> Direction of the recording CCD defined for LUTI
-        A. </xs:documentation>
+      <xs:documentation> The CCD direction parameter defines the
+        direction of CCD reading. The value 0 is for the reading
+        direction from 1st pixel to 2048th pixel (default) and the value
+        1 is from the reading direction from 2048th pixel to 1st pixel.
+        </xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Integer">
      <xs:minInclusive value="-9223372036854775808"/>
@@ -407,8 +416,8 @@
 
   <xs:simpleType name="frame_id">
     <xs:annotation>
-      <xs:documentation>Records if the image was LUTI
-        A</xs:documentation>
+      <xs:documentation>Records if the image was LUTI A or
+        B</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Short_String_Collapsed">
      <xs:minLength value="1"/>
@@ -560,7 +569,7 @@
 
   <xs:complexType name="luti_constant_time_offset">
     <xs:annotation>
-      <xs:documentation> Constant time offset for LUTI A and B in
+      <xs:documentation> Constant time offset for LUTI A or B in
         seconds. </xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
@@ -570,9 +579,39 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:simpleType name="luti_target_id">
+  <xs:simpleType name="luti_quality_id">
     <xs:annotation>
-<xs:documentation> LUTI target ID. </xs:documentation>
+      <xs:documentation> For LUTI, the quality ID represents the error
+        status of the image. 0: No error, 1: CRC error, 2: CRC error +
+        compression/decompression error. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="luti_target_name">
+    <xs:annotation>
+      <xs:documentation> The luti target name indicates the name of
+        target areas if it is available. If it is not, it will show NA.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="luti_target_type">
+    <xs:annotation>
+      <xs:documentation> The luti target type is for LUTI target type
+        such as MLND (Lunar surface, moon landing candidates), MMMO (man
+        made objects), MCRT (lunar craters), MPIT (lunar pits), CGEO
+        (calibration target for geocal), CDRK (dark), CLIM(lunar limb),
+        LSLT (side slither), CSTA (star image), SERT (special targets
+        for the earth), SPLT (planets), and SMS1 and SMS2 (special lunar
+        surface image). </xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Short_String_Collapsed">
      <xs:minLength value="1"/>
@@ -683,8 +722,11 @@
 
   <xs:simpleType name="pre_scan_mode_selection">
     <xs:annotation>
-      <xs:documentation> pre-scan defined mode selection for LUTI A
-        </xs:documentation>
+      <xs:documentation> The pre scan mode selection flag is set by
+        ground command. Default value is 1. The value 0 is for disable
+        of use of pre-scan pixel and the value 1 is to use averaged
+        value of pre-scan pixel and the value 2 is to use constant
+        offset value predefined. </xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Integer">
      <xs:minInclusive value="-9223372036854775808"/>

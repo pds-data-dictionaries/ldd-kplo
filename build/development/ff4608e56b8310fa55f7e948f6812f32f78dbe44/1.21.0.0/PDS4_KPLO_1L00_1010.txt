@@ -1,0 +1,782 @@
+PDS4 Local Data Dictionary Processing Report
+
+Configuration:
+   LDDTool Version        15.0.6
+   LDD Version Id:        1.0.1.0
+   LDD Label Version Id:  1.27
+   LDD Discipline (T/F):  false
+   LDD Namespace URL:     http://www.kari.re.kr/kpds/
+   LDD URN Prefix:        urn:kari:kpds:
+   Time                   Wed May 01 23:52:41 UTC 2024
+   Common Schema          [PDS4_PDS_1L00.xsd]
+   Common Schematron      [PDS4_PDS_1L00.sch]
+   IM Version Id:         1.21.0.0
+   IM Namespace Id:       pds
+   IM Label Version Id:   1.27
+   IM Object Model        [UpperModel.pont]
+   IM Data Dictionary     [dd11179.pins]
+   IM Configuration File  [MDPTNConfigClassDisp.xml]
+   IM Glossary            [Glossary.pins]
+   IM Document Spec       [DMDocument.pins]
+
+Parameters:
+   Input File             [/home/runner/work/ldd-kplo/ldd-kplo/src/PDS4_KPLO_IngestLDD.xml]
+   PDS Processing         true
+   LDD Processing         true
+   Discipline LDD         false
+   Mission LDD            true
+   Write Attr Elements    false
+   Merge with Master      false
+
+Summary:
+   Classes                3
+   Attributes             67
+   Associations           71
+   Error messages         0
+   Warning messages       0
+   Information messages   0
+
+Detailed validation messages
+
+Parsed Input - Header:
+   LDD Name               KPLO
+   LDD Version            1.0.1.0
+   Full Name              Trent Hare
+   Steward                img
+   Namespace Id           kplo
+   Comment                
+        The KPLO dictionary contains classes that describe aspects of the 
+        Korea Pathfinder Lunar Orbiter mission and related instruments.
+    
+   Last Modification Time 2024-05-01T16:48Z
+   PDS4 Merge Flag        false
+
+Parsed Input - Attributes:
+
+   name                   bias_spread
+   version                1.21
+   value data type        ASCII_Integer
+   description            Difference between the max and min bias 12-bit DN value for the whole image.
+
+   name                   bias_spread_ch0
+   version                1.21
+   value data type        ASCII_Integer
+   description            Difference between the max and min bias 12-bit DN value for channel 0.
+
+   name                   bias_spread_ch1
+   version                1.21
+   value data type        ASCII_Integer
+   description            Difference between the max and min bias 12-bit DN value for channel 1.
+
+   name                   bias_spread_ch2
+   version                1.21
+   value data type        ASCII_Integer
+   description            Difference between the max and min bias 12-bit DN value for channel 2.
+
+   name                   bias_spread_ch3
+   version                1.21
+   value data type        ASCII_Integer
+   description            Difference between the max and min bias 12-bit DN value for channel 3.
+
+   name                   bias_spread_ch4
+   version                1.21
+   value data type        ASCII_Integer
+   description            Difference between the max and min bias 12-bit DN value for channel 4.
+
+   name                   bias_spread_ch5
+   version                1.21
+   value data type        ASCII_Integer
+   description            Difference between the max and min bias 12-bit DN value for channel 5.
+
+   name                   bit_selection
+   version                1.21
+   value data type        ASCII_Integer
+   description            The ADC bit selection is for the used bit range flag. The value 0 is for bit range 11 ~ 0 and detectable range 0~4095, the value 1 is for bit range 12 ~ 1 and detectable range 0~8190, and the value 2 is for bit range 13 ~ 2 and detectable range 0~16380. 
+
+   name                   bterm1
+   version                1.21
+   value data type        ASCII_Integer
+   description            ShadowCam companding bterm 1 (See appendix in the ShadowCam archive SIS for detailed companding information)
+
+   name                   bterm2
+   version                1.21
+   value data type        ASCII_Integer
+   description            ShadowCam companding bterm 2 (See appendix in the ShadowCam archive SIS for detailed companding information)
+
+   name                   bterm3
+   version                1.21
+   value data type        ASCII_Integer
+   description            ShadowCam companding bterm 3 (See appendix in the ShadowCam archive SIS for detailed companding information)
+
+   name                   bterm4
+   version                1.21
+   value data type        ASCII_Integer
+   description            ShadowCam companding bterm 4 (See appendix in the ShadowCam archive SIS for detailed companding information)
+
+   name                   bterm5
+   version                1.21
+   value data type        ASCII_Integer
+   description            ShadowCam companding bterm 5 (See appendix in the ShadowCam archive SIS for detailed companding information)
+
+   name                   ccd_direction
+   version                1.21
+   value data type        ASCII_Integer
+   description             The CCD direction parameter defines the direction of CCD reading. The value 0 is for the reading direction from 1st pixel to 2048th pixel (default) and the value 1 is from the reading direction from 2048th pixel to 1st pixel. 
+
+   name                   data_quality_desc
+   version                1.21
+   value data type        ASCII_Text_Collapsed
+   description             Describes how to interpret the data_quality_id field. 
+
+   name                   data_quality_id
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description             LROC-style data quality ID bitmask with minimal differences between ShadowCam and LROC definitions. See data_quality_desc for details. The individual boolean fields (dqi_*) are likely easier to use for new software. 
+
+   name                   dqi_corruption_detected
+   version                1.21
+   value data type        ASCII_Boolean
+   description             The corruption detection algorithm found a strong likelihood of image corruption somewhere in the observation. This is often localized to a small area, leaving most of the image usable. 
+
+   name                   dqi_fpa_out_of_bounds
+   version                1.21
+   value data type        ASCII_Boolean
+   description             The focal plane temperature was outside of the nominal operational limits. The calibration of the image is likely to not be as good in this case. 
+
+   name                   dqi_missing_data
+   version                1.21
+   value data type        ASCII_Boolean
+   description             One or more 1 MiB data blocks are missing from the image. Due to interleaving, this typically results in a pattern of 4 pixels present 4 pixels missing. 
+
+   name                   dqi_missing_spice
+   version                1.21
+   value data type        ASCII_Boolean
+   description             SPICE was unavailable for this observation. 
+
+   name                   dqi_uncalibratable
+   version                1.21
+   value data type        ASCII_Boolean
+   description             This observation could not be calibrated. 
+
+   name                   dqi_under_saturated
+   version                1.21
+   value data type        ASCII_Boolean
+   description             One or more 0 DN values are present in the companded 8-bit DN. 
+
+   name                   execution_spacecraft_time
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            The spacecraft time of when the image command was executed. Use this time with the SCLK kernel and add the start_time_offset value for the most accurate image start. 
+
+   name                   execution_time
+   version                1.21
+   value data type        ASCII_Date_Time_YMD
+   description            The UTC time and date at the execution of the image acquisition command. Add the start time offset to this time to get the start of the image data. Use the spacecraft clock version of the time with an SCLK kernel for the most accurate timing. 
+
+   name                   frame_id
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Records if the image was LUTI A or B
+
+   name                   gain_ch0
+   version                1.21
+   value data type        ASCII_Integer
+   description             The analog front end gain for channel 0. See ShadowCam calibration paper for details on the gain correction. 
+
+   name                   gain_ch1
+   version                1.21
+   value data type        ASCII_Integer
+   description             The analog front end gain for channel 1. See ShadowCam calibration paper for details on the gain correction. 
+
+   name                   gain_ch2
+   version                1.21
+   value data type        ASCII_Integer
+   description             The analog front end gain for channel 2. See ShadowCam calibration paper for details on the gain correction. 
+
+   name                   gain_ch3
+   version                1.21
+   value data type        ASCII_Integer
+   description             The analog front end gain for channel 3. See ShadowCam calibration paper for details on the gain correction. 
+
+   name                   gain_ch4
+   version                1.21
+   value data type        ASCII_Integer
+   description             The analog front end gain for channel 4. See ShadowCam calibration paper for details on the gain correction. 
+
+   name                   gain_ch5
+   version                1.21
+   value data type        ASCII_Integer
+   description             The analog front end gain for channel 4. See ShadowCam calibration paper for details on the gain correction. 
+
+   name                   klines
+   version                1.21
+   value data type        ASCII_Integer
+   description             The number of 1024-line image chunks commanded (includes preroll). 
+
+   name                   line_integration_time
+   version                1.21
+   value data type        ASCII_Real
+   description             The line integration time in milliseconds. 
+   unit of measure type   Units_of_Time
+
+   name                   line_rate_code
+   version                1.21
+   value data type        ASCII_Integer
+   description             The TDI line rate code commanded. The line time in seconds can be computed from the commanded line rate using the expression 50e-9*(12*524+(lr*(38+1)+46)), where lr is thecommanded line rate (0-4095). 
+
+   name                   line_rate_ms
+   version                1.21
+   value data type        ASCII_Real
+   description             The TDI line rate in milliseconds, the effective exposure time is multiplied by 32 for the number of TDI stages. 
+   unit of measure type   Units_of_Time
+
+   name                   luti_constant_time_offset
+   version                1.21
+   value data type        ASCII_Real
+   description             Constant time offset for LUTI A or B in seconds. 
+   unit of measure type   Units_of_Time
+
+   name                   luti_quality_id
+   version                1.21
+   value data type        ASCII_Integer
+   description             For LUTI, the quality ID represents the error status of the image. 0: No error, 1: CRC error, 2: CRC error + compression/decompression error. 
+
+   name                   luti_target_type
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description             The luti target type is for LUTI target type such as MLND (Lunar surface, moon landing candidates), MMMO (man made objects), MCRT (lunar craters), MPIT (lunar pits), CGEO (calibration target for geocal), CDRK (dark), CLIM(lunar limb), LSLT (side slither), CSTA (star image), SERT (special targets for the earth), SPLT (planets), and SMS1 and SMS2 (special lunar surface image). 
+
+   name                   luti_target_name
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description             The luti target name indicates the name of target areas if it is available. If it is not, it will show NA. 
+
+   name                   mission_phase_name
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description             The mission_phase_name attribute provides the mission-defined name of a time period within the mission. 
+
+   name                   mode_test
+   version                1.21
+   value data type        ASCII_Boolean
+   description             The instrument was commanded in test mode, resulting in a gradient rather than image data. 
+
+   name                   offset_ch0
+   version                1.21
+   value data type        ASCII_Integer
+   description             The analog front end offset for channel 0. 
+
+   name                   offset_ch1
+   version                1.21
+   value data type        ASCII_Integer
+   description             The analog front end offset for channel 1. 
+
+   name                   offset_ch2
+   version                1.21
+   value data type        ASCII_Integer
+   description             The analog front end offset for channel 2. 
+
+   name                   offset_ch3
+   version                1.21
+   value data type        ASCII_Integer
+   description             The analog front end offset for channel 3. 
+
+   name                   offset_ch4
+   version                1.21
+   value data type        ASCII_Integer
+   description             The analog front end offset for channel 4. 
+
+   name                   offset_ch5
+   version                1.21
+   value data type        ASCII_Integer
+   description             The analog front end offset for channel 5. 
+
+   name                   orbit_number
+   version                1.21
+   value data type        ASCII_Integer
+   description            The orbit_number attribute identifies the number of the orbital revolution of the spacecraft around the Moon. 
+   nillable               true
+   minimum value          0
+
+   name                   pre_scan_mode_selection
+   version                1.21
+   value data type        ASCII_Integer
+   description             The pre scan mode selection flag is set by ground command. Default value is 1. The value 0 is for disable of use of pre-scan pixel and the value 1 is to use averaged value of pre-scan pixel and the value 2 is to use constant offset value predefined. 
+
+   name                   preroll_lines
+   version                1.21
+   value data type        ASCII_Integer
+   description             The number of image lines dropped to initialize the TDI sensor. Typically, this is a minimum of 256. 
+
+   name                   preroll_time
+   version                1.21
+   value data type        ASCII_Date_Time_YMD
+   description            The UTC time and date at the start of the image acquisition, corresponding to the acquisition of preroll_lines at the given exposure prior to the actual image acquisition. 
+
+   name                   producer_institution_name
+   version                1.21
+   value data type        ASCII_Short_String_Preserved
+   description            The producer_institution_name attribute identifies a university, research center, NASA center, or other institution associated with the production of a data product. 
+
+   name                   product_version_id
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description             A version specifier to differentiate how the data was processed. 
+
+   name                   rationale_desc
+   version                1.21
+   value data type        ASCII_Text_Preserved
+   description             Any available commentary on the goal of the observation. This is created at planning time, and specific instrument and spacecraft performance may impact if the resulting image meets the original goal or not. 
+
+   name                   spacecraft_clock_start_count
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            The spacecraft_clock_start_count attribute provides the value of the spacecraft clock at the beginning of a time period of interest. 
+
+   name                   spacecraft_clock_stop_count
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            The spacecraft_clock_stop_count attribute provides the value of the spacecraft clock at the beginning of a time period of interest. 
+
+   name                   start_time_offset
+   version                1.21
+   value data type        ASCII_Real
+   description             The time in seconds after the execution time that the first image row started. Use this with execution_spacecraft_time and the KPLO SCLK kernel to get the best available start of the image data. 
+   unit of measure type   Units_of_Time
+
+   name                   tdi_direction
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description             The TDI direction of the sensor (A or B). This must match the flight direction of the spacecraft except for calibration images. 
+
+   name                   temperature_fpa_a
+   version                1.21
+   value data type        ASCII_Real
+   description             The temperature of the ‘A’ sensor adjacent to the focal plane. This sensor is located on the heat strap going to the radiator and is the primary temperature used for calibration. 
+   unit of measure type   Units_of_Temperature
+
+   name                   temperature_fpa_b
+   version                1.21
+   value data type        ASCII_Real
+   description             The temperature of the ‘B’ sensor adjacent to the focal plane. This sensor is on the opposite side of the TDI sensor from ‘A’, but is not on the copper strap. 
+   unit of measure type   Units_of_Temperature
+
+   name                   temperature_fpga
+   version                1.21
+   value data type        ASCII_Real
+   description             The temperature reported on the electronics board adjacent to the FPGA. 
+   unit of measure type   Units_of_Temperature
+
+   name                   temperature_telescope
+   version                1.21
+   value data type        ASCII_Real
+   description             The temperature reported from the metering structure of the telescope. 
+   unit of measure type   Units_of_Temperature
+
+   name                   xterm0
+   version                1.21
+   value data type        ASCII_Real
+   description             ShadowCam companding xterm 0 (See appendix in the ShadowCam archive SIS for detailed companding information) 
+
+   name                   xterm1
+   version                1.21
+   value data type        ASCII_Real
+   description             ShadowCam companding xterm 1 (See appendix in the ShadowCam archive SIS for detailed companding information) 
+
+   name                   xterm2
+   version                1.21
+   value data type        ASCII_Real
+   description             ShadowCam companding xterm 2 (See appendix in the ShadowCam archive SIS for detailed companding information) 
+
+   name                   xterm3
+   version                1.21
+   value data type        ASCII_Real
+   description             ShadowCam companding xterm 3 (See appendix in the ShadowCam archive SIS for detailed companding information) 
+
+   name                   xterm4
+   version                1.21
+   value data type        ASCII_Real
+   description             ShadowCam companding xterm 4 (See appendix in the ShadowCam archive SIS for detailed companding information) 
+
+Parsed Input - Classes:
+
+   name                   SHADOWCAM_Parameters
+   description            The SHADOWCAM_Parameters class is the container for ShadowCam-specific observation parameters.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      kplo.rationale_desc
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.data_quality_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.data_quality_desc
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.dqi_corruption_detected
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.dqi_fpa_out_of_bounds
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.dqi_under_saturated
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.dqi_missing_data
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.dqi_missing_spice
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.dqi_uncalibratable
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.execution_spacecraft_time
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.execution_time
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.start_time_offset
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.preroll_time
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.temperature_fpa_a
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.temperature_fpa_b
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.temperature_fpga
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.temperature_telescope
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.line_rate_ms
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.line_rate_code
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.klines
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.preroll_lines
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.bterm1
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.bterm2
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.bterm3
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.bterm4
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.bterm5
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.xterm0
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.xterm1
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.xterm2
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.xterm3
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.xterm4
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.mode_test
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.tdi_direction
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.gain_ch0
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.gain_ch1
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.gain_ch2
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.gain_ch3
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.gain_ch4
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.gain_ch5
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.offset_ch0
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.offset_ch1
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.offset_ch2
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.offset_ch3
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.offset_ch4
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.offset_ch5
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.bias_spread
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.bias_spread_ch0
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.bias_spread_ch1
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.bias_spread_ch2
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.bias_spread_ch3
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.bias_spread_ch4
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.bias_spread_ch5
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.data_quality_desc
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   LUTI_Parameters
+   description            The LUTI_Parameters class is the container for Lunar Terrain Imager A and B specific observation parameters.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      kplo.rationale_desc
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.luti_target_type
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      kplo.luti_target_name
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      kplo.frame_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.luti_constant_time_offset
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.spacecraft_clock_start_count
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.spacecraft_clock_stop_count
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.line_integration_time
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.ccd_direction
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.bit_selection
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.pre_scan_mode_selection
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.luti_quality_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   KPLO_Parameters
+   description            The KPLO_Parameters class is the container for mission-specific metadata elements.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      kplo.product_version_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.mission_phase_name
+      minimum occurrences   0
+      maximum occurrences   unbounded
+      reference type        attribute_of
+
+      local identifier      kplo.orbit_number
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.producer_institution_name
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.SHADOWCAM_Parameters
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      kplo.LUTI_Parameters
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+End of Report

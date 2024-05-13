@@ -1,13 +1,13 @@
 PDS4 Local Data Dictionary Processing Report
 
 Configuration:
-   LDDTool Version        14.3.0
-   LDD Version Id:        1.0.0.0
+   LDDTool Version        15.0.6
+   LDD Version Id:        1.0.1.0
    LDD Label Version Id:  1.27
    LDD Discipline (T/F):  false
-   LDD Namespace URL:     http://tbd
+   LDD Namespace URL:     http://www.kari.re.kr/kpds/
    LDD URN Prefix:        urn:kari:kpds:
-   Time                   Mon Mar 04 20:05:15 UTC 2024
+   Time                   Wed May 01 23:52:41 UTC 2024
    Common Schema          [PDS4_PDS_1L00.xsd]
    Common Schematron      [PDS4_PDS_1L00.sch]
    IM Version Id:         1.21.0.0
@@ -30,8 +30,8 @@ Parameters:
 
 Summary:
    Classes                3
-   Attributes             65
-   Associations           69
+   Attributes             67
+   Associations           71
    Error messages         0
    Warning messages       0
    Information messages   0
@@ -40,7 +40,7 @@ Detailed validation messages
 
 Parsed Input - Header:
    LDD Name               KPLO
-   LDD Version            1.0.0.0
+   LDD Version            1.0.1.0
    Full Name              Trent Hare
    Steward                img
    Namespace Id           kplo
@@ -48,7 +48,7 @@ Parsed Input - Header:
         The KPLO dictionary contains classes that describe aspects of the 
         Korea Pathfinder Lunar Orbiter mission and related instruments.
     
-   Last Modification Time 2024-03-04T11:03Z
+   Last Modification Time 2024-05-01T16:48Z
    PDS4 Merge Flag        false
 
 Parsed Input - Attributes:
@@ -91,7 +91,7 @@ Parsed Input - Attributes:
    name                   bit_selection
    version                1.21
    value data type        ASCII_Integer
-   description            LUTI A bit selection flag
+   description            The ADC bit selection is for the used bit range flag. The value 0 is for bit range 11 ~ 0 and detectable range 0~4095, the value 1 is for bit range 12 ~ 1 and detectable range 0~8190, and the value 2 is for bit range 13 ~ 2 and detectable range 0~16380. 
 
    name                   bterm1
    version                1.21
@@ -121,7 +121,7 @@ Parsed Input - Attributes:
    name                   ccd_direction
    version                1.21
    value data type        ASCII_Integer
-   description             Direction of the recording CCD defined for LUTI A. 
+   description             The CCD direction parameter defines the direction of CCD reading. The value 0 is for the reading direction from 1st pixel to 2048th pixel (default) and the value 1 is from the reading direction from 2048th pixel to 1st pixel. 
 
    name                   data_quality_desc
    version                1.21
@@ -176,7 +176,7 @@ Parsed Input - Attributes:
    name                   frame_id
    version                1.21
    value data type        ASCII_Short_String_Collapsed
-   description            Records if the image was LUTI A
+   description            Records if the image was LUTI A or B
 
    name                   gain_ch0
    version                1.21
@@ -233,13 +233,23 @@ Parsed Input - Attributes:
    name                   luti_constant_time_offset
    version                1.21
    value data type        ASCII_Real
-   description             Constant time offset for LUTI A and B in seconds. 
+   description             Constant time offset for LUTI A or B in seconds. 
    unit of measure type   Units_of_Time
 
-   name                   luti_target_id
+   name                   luti_quality_id
+   version                1.21
+   value data type        ASCII_Integer
+   description             For LUTI, the quality ID represents the error status of the image. 0: No error, 1: CRC error, 2: CRC error + compression/decompression error. 
+
+   name                   luti_target_type
    version                1.21
    value data type        ASCII_Short_String_Collapsed
-   description             LUTI target ID. 
+   description             The luti target type is for LUTI target type such as MLND (Lunar surface, moon landing candidates), MMMO (man made objects), MCRT (lunar craters), MPIT (lunar pits), CGEO (calibration target for geocal), CDRK (dark), CLIM(lunar limb), LSLT (side slither), CSTA (star image), SERT (special targets for the earth), SPLT (planets), and SMS1 and SMS2 (special lunar surface image). 
+
+   name                   luti_target_name
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description             The luti target name indicates the name of target areas if it is available. If it is not, it will show NA. 
 
    name                   mission_phase_name
    version                1.21
@@ -291,7 +301,7 @@ Parsed Input - Attributes:
    name                   pre_scan_mode_selection
    version                1.21
    value data type        ASCII_Integer
-   description             pre-scan defined mode selection for LUTI A 
+   description             The pre scan mode selection flag is set by ground command. Default value is 1. The value 0 is for disable of use of pre-scan pixel and the value 1 is to use averaged value of pre-scan pixel and the value 2 is to use constant offset value predefined. 
 
    name                   preroll_lines
    version                1.21
@@ -676,9 +686,14 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      kplo.luti_target_id
+      local identifier      kplo.luti_target_type
       minimum occurrences   0
-      maximum occurrences   1
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      kplo.luti_target_name
+      minimum occurrences   0
+      maximum occurrences   *
       reference type        attribute_of
 
       local identifier      kplo.frame_id
@@ -717,6 +732,11 @@ Parsed Input - Classes:
       reference type        attribute_of
 
       local identifier      kplo.pre_scan_mode_selection
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.luti_quality_id
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
