@@ -1,13 +1,13 @@
 PDS4 Local Data Dictionary Processing Report
 
 Configuration:
-   LDDTool Version        15.0.6
-   LDD Version Id:        1.0.1.0
+   LDDTool Version        15.3.0
+   LDD Version Id:        1.0.2.0
    LDD Label Version Id:  1.27
    LDD Discipline (T/F):  false
    LDD Namespace URL:     http://www.kari.re.kr/kpds/
    LDD URN Prefix:        urn:kari:kpds:
-   Time                   Wed May 01 23:52:41 UTC 2024
+   Time                   Mon Sep 22 20:27:24 UTC 2025
    Common Schema          [PDS4_PDS_1L00.xsd]
    Common Schematron      [PDS4_PDS_1L00.sch]
    IM Version Id:         1.21.0.0
@@ -15,7 +15,6 @@ Configuration:
    IM Label Version Id:   1.27
    IM Object Model        [UpperModel.pont]
    IM Data Dictionary     [dd11179.pins]
-   IM Configuration File  [MDPTNConfigClassDisp.xml]
    IM Glossary            [Glossary.pins]
    IM Document Spec       [DMDocument.pins]
 
@@ -30,8 +29,8 @@ Parameters:
 
 Summary:
    Classes                3
-   Attributes             67
-   Associations           71
+   Attributes             81
+   Associations           85
    Error messages         0
    Warning messages       0
    Information messages   0
@@ -40,7 +39,7 @@ Detailed validation messages
 
 Parsed Input - Header:
    LDD Name               KPLO
-   LDD Version            1.0.1.0
+   LDD Version            1.0.2.0
    Full Name              Trent Hare
    Steward                img
    Namespace Id           kplo
@@ -48,7 +47,7 @@ Parsed Input - Header:
         The KPLO dictionary contains classes that describe aspects of the 
         Korea Pathfinder Lunar Orbiter mission and related instruments.
     
-   Last Modification Time 2024-05-01T16:48Z
+   Last Modification Time 2025-09-22T12:00Z
    PDS4 Merge Flag        false
 
 Parsed Input - Attributes:
@@ -122,6 +121,23 @@ Parsed Input - Attributes:
    version                1.21
    value data type        ASCII_Integer
    description             The CCD direction parameter defines the direction of CCD reading. The value 0 is for the reading direction from 1st pixel to 2048th pixel (default) and the value 1 is from the reading direction from 2048th pixel to 1st pixel. 
+
+   name                   compression_mode
+   version                1.21
+   value data type        ASCII_Integer
+   description            compression_mode is set by ground command. Default value is 1 for compression on and 0 for off.
+
+   name                   compression_ratio
+   version                1.21
+   value data type        ASCII_Integer
+   description            compression_ratio is set by ground command. Default value is 0 for losses. Range is from 0 to 255
+   minimum value          0
+   maximum value          255
+
+   name                   constant_offset_data
+   version                1.21
+   value data type        ASCII_Integer
+   description            constant_offset is set by ground command. Default value is 0. if prescan mode is 2, then this value will be used.
 
    name                   data_quality_desc
    version                1.21
@@ -212,6 +228,18 @@ Parsed Input - Attributes:
    version                1.21
    value data type        ASCII_Integer
    description             The number of 1024-line image chunks commanded (includes preroll). 
+
+   name                   line_rate
+   version                1.21
+   value data type        ASCII_Real
+   description            line time in hertz
+   unit of measure type   Units_of_Frequency
+
+   name                   line_time
+   version                1.21
+   value data type        ASCII_Real
+   description            line time in milliseconds
+   unit of measure type   Units_of_Time
 
    name                   line_integration_time
    version                1.21
@@ -349,6 +377,54 @@ Parsed Input - Attributes:
    value data type        ASCII_Short_String_Collapsed
    description             The TDI direction of the sensor (A or B). This must match the flight direction of the spacecraft except for calibration images. 
 
+   name                   temperature_case_start
+   version                1.21
+   value data type        ASCII_Real
+   description            The case temperature is recorded at the beginning of the line
+   unit of measure type   Units_of_Temperature
+
+   name                   temperature_case_end
+   version                1.21
+   value data type        ASCII_Real
+   description            The case temperature is recorded at the end of the line
+   unit of measure type   Units_of_Temperature
+
+   name                   temperature_ccd_start
+   version                1.21
+   value data type        ASCII_Real
+   description            The ccd temperature is recorded at the beginning of the line
+   unit of measure type   Units_of_Temperature
+
+   name                   temperature_ccd_end
+   version                1.21
+   value data type        ASCII_Real
+   description            The ccd temperature is recorded at the end of the line
+   unit of measure type   Units_of_Temperature
+
+   name                   temperature_fpe_start
+   version                1.21
+   value data type        ASCII_Real
+   description            The fpe temperature is recorded at the beginning of the line
+   unit of measure type   Units_of_Temperature
+
+   name                   temperature_fpe_end
+   version                1.21
+   value data type        ASCII_Real
+   description            The fpe temperature is recorded at the end of the line
+   unit of measure type   Units_of_Temperature
+
+   name                   temperature_psu_start
+   version                1.21
+   value data type        ASCII_Real
+   description            The psu temperature is recorded at the beginning of the line
+   unit of measure type   Units_of_Temperature
+
+   name                   temperature_psu_end
+   version                1.21
+   value data type        ASCII_Real
+   description            The psu temperature is recorded at the end of the line
+   unit of measure type   Units_of_Temperature
+
    name                   temperature_fpa_a
    version                1.21
    value data type        ASCII_Real
@@ -397,6 +473,11 @@ Parsed Input - Attributes:
    version                1.21
    value data type        ASCII_Real
    description             ShadowCam companding xterm 4 (See appendix in the ShadowCam archive SIS for detailed companding information) 
+
+   name                   yaw_flip_angle
+   version                1.21
+   value data type        ASCII_Integer
+   description            The spacecraft is yaw-rotated to ±45° (i.e., 45° or 225°) relative to the reference axis
 
 Parsed Input - Classes:
 
@@ -741,6 +822,71 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        attribute_of
 
+      local identifier      kplo.compression_mode
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.compression_ratio
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.constant_offset_data
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.line_rate
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.line_time
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.temperature_case_start
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.temperature_case_end
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.temperature_ccd_start
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.temperature_ccd_end
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.temperature_fpe_start
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.temperature_fpe_end
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.temperature_psu_start
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.temperature_psu_end
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
    name                   KPLO_Parameters
    description            The KPLO_Parameters class is the container for mission-specific metadata elements.
    is abstract            false
@@ -765,6 +911,11 @@ Parsed Input - Classes:
       reference type        attribute_of
 
       local identifier      kplo.producer_institution_name
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      kplo.yaw_flip_angle
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of

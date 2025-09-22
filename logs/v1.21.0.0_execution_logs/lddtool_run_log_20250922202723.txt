@@ -1,15 +1,17 @@
 
->>  INFO LDDTOOL Version: 15.0.6
+>>  INFO LDDTOOL Version: 15.3.0
 >>  INFO IM Version Id: 1.21.0.0
 >>  INFO IM Namespace Id: pds
 >>  INFO IM Label Version Id: 1.27
->>  INFO Date: Wed May 01 23:52:41 UTC 2024
->>  INFO PARENT_DIR: /tmp/lddtool-15.0.6/Data/
+>>  INFO Date: Mon Sep 22 20:27:24 UTC 2025
+>>  INFO PARENT_DIR: /tmp/lddtool-15.3.0/Data/
 
 >>> INFO Init:  - Config.Properties Namespace Id Found:kplo
 >>> INFO Init:  - Config.Properties Namespace Id Using:kplo
 >>> INFO Init:  - LDD Dictionary_Type is Mission
 >>> INFO Attribute: <orbit_number> - A 'nillable' attribute was found that is not a required attribute in at least one class.
+>>> INFO Attribute: <compression_ratio> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <compression_ratio> - The default maximum value provided by the attribute's data type is being overridden with 255
 >>> INFO Attribute: <orbit_number> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> WARNING Attribute: <luti_target_type> - The 'type' attribute must have at least one permissible value.
 
@@ -30,9 +32,9 @@ Input:
 
 Output:
 
-     - ./PDS4_KPLO_1L00_1010.xsd
-     - ./PDS4_KPLO_1L00_1010.sch
-     - ./PDS4_KPLO_1L00_1010.xml
-     - ./export/JSON/PDS4_PDS_1L00.JSON
+     - ./PDS4_KPLO_1L00_1020.xsd
+     - ./PDS4_KPLO_1L00_1020.sch
+     - ./PDS4_KPLO_1L00_1020.xml
+     - ./export/PDS4_PDS_1L00.JSON
 
 >>  INFO Exit(0)
