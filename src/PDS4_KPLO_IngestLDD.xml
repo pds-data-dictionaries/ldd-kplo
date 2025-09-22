@@ -8,7 +8,7 @@
     xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1
                         http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1L00.xsd">
     <name>KPLO</name>
-    <ldd_version_id>1.0.1.0</ldd_version_id>
+    <ldd_version_id>1.0.2.0</ldd_version_id>
     <dictionary_type>Mission</dictionary_type>
     <full_name>Trent Hare</full_name>
     <steward_id>img</steward_id>
@@ -22,10 +22,14 @@
     <!-- 02/29/2024 Added LUTI "A" parameters from label examples, assume LUTI "B" is coming -->
     <!-- 03/04/2024 Team only needs "LUTI" for both "A"/"B" instruments, renamed to LUTI_Parameters -->
     <!-- 05/01/2024 LUTI team updates, removes luti_target_id for luti_target_type and adds luti_target_name
-                    and luti_quality_id. Updates to several definitions for LUTI.
-    -->                
-    
-    <last_modification_date_time>2024-05-01T16:48Z</last_modification_date_time>
+                    and luti_quality_id. Updates to several definitions for LUTI.-->  
+    <!-- 08/26/2025 Added new LUTI attributes: compression_mode, compression_ratio, constant_offset_data,
+                    line_rate, line_time, temperature attributes, extended_mission_phase_name, and yaw_flip_angle.
+					Modified by Seunghee Son@KARI-->
+    <!-- 9/22/2025  Minor updates to desciptions(non UTF-8 hyphen used, so replaced). Collapsed
+                    extended_mission_phase_name to just use mission_phase_name -->
+     
+    <last_modification_date_time>2025-09-22T12:00Z</last_modification_date_time>
 
 <!-- Attribute Definitions (alphabetical) -->
 
@@ -222,6 +226,49 @@
             <value_data_type>ASCII_Integer</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
+	
+	<DD_Attribute> <!-- compression_mode -->
+        <name>compression_mode</name>
+        <version_id>1.0</version_id>
+        <local_identifier>kplo.compression_mode</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>compression_mode is set by ground command. Default value is 1 for compression on and 0 for off.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- compression_ratio -->
+        <name>compression_ratio</name>
+        <version_id>1.0</version_id>
+        <local_identifier>kplo.compression_ratio</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>compression_ratio is set by ground command. Default value is 0 for losses. Range is from 0 to 255</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+            <minimum_value>0</minimum_value>
+            <maximum_value>255</maximum_value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- constant_offset_data -->
+        <name>constant_offset_data</name>
+        <version_id>1.0</version_id>
+        <local_identifier>kplo.constant_offset_data</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>constant_offset is set by ground command. Default value is 0. if prescan mode is 2, then this value will be used.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+	
     
     <DD_Attribute> <!-- data_quality_desc -->
         <name>data_quality_desc</name>
@@ -384,8 +431,9 @@
             <value_data_type>ASCII_Date_Time_YMD</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
-
-    <DD_Attribute> <!-- frame_id --> 
+	
+	<!-- UPDATED EXISTING ATTRIBUTE -->
+    <DD_Attribute> <!-- frame_id - UPDATED with A/B values --> 
         <name>frame_id</name>
         <version_id>1.0</version_id>
         <local_identifier>kplo.frame_id</local_identifier>
@@ -393,8 +441,16 @@
         <submitter_name>IMG</submitter_name>
         <definition>Records if the image was LUTI A or B</definition>
         <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
+            <enumeration_flag>true</enumeration_flag>
             <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>A</value>
+                <value_meaning>LUTI A instrument</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>B</value>
+                <value_meaning>LUTI B instrument</value_meaning>
+            </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
 
@@ -502,6 +558,35 @@
             <value_data_type>ASCII_Integer</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
+
+	<DD_Attribute> <!-- line_rate -->
+        <name>line_rate</name>
+        <version_id>1.0</version_id>
+        <local_identifier>kplo.line_rate</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>line time in hertz</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Frequency</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- line_time -->
+        <name>line_time</name>
+        <version_id>1.0</version_id>
+        <local_identifier>kplo.line_time</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>line time in milliseconds</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
 
     <DD_Attribute> <!-- line_integration_time for LUTI --> 
         <name>line_integration_time</name>
@@ -645,10 +730,26 @@
             <DD_Permissible_Value>
                 <value>extended</value>
                 <value_meaning>Extended mission phase past end of nomial mission</value_meaning>
+            </DD_Permissible_Value>    
+            <DD_Permissible_Value>
+                <value>EMP1</value>
+                <value_meaning>Extended Mission Phase 1: End of nominal mission - before altitude-lowering maneuver (2024-Feb-19)</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>EMP2</value>
+                <value_meaning>Extended Mission Phase 2: Low-altitude (60 km) operations - frozen orbit insertion (2024-Sep-24, TBD)</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>EMP3</value>
+                <value_meaning>Extended Mission Phase 3: Frozen orbit operations - start of decommissioning (2027-Dec-31, TBD)</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>EOM</value>
+                <value_meaning>End of Mission: Decommissioning activities - mission termination</value_meaning>
             </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+	
     <DD_Attribute> <!-- mode_test --> 
         <name>mode_test</name>
         <version_id>1.0</version_id>
@@ -940,6 +1041,120 @@
             </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
+	
+	<!-- Temperature Attributes -->
+    <DD_Attribute> <!-- temperature_case_start -->
+        <name>temperature_case_start</name>
+        <version_id>1.0</version_id>
+        <local_identifier>kplo.temperature_case_start</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>The case temperature is recorded at the beginning of the line</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- temperature_case_end -->
+        <name>temperature_case_end</name>
+        <version_id>1.0</version_id>
+        <local_identifier>kplo.temperature_case_end</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>The case temperature is recorded at the end of the line</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- temperature_ccd_start -->
+        <name>temperature_ccd_start</name>
+        <version_id>1.0</version_id>
+        <local_identifier>kplo.temperature_ccd_start</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>The ccd temperature is recorded at the beginning of the line</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- NEW: temperature_ccd_end -->
+        <name>temperature_ccd_end</name>
+        <version_id>1.0</version_id>
+        <local_identifier>kplo.temperature_ccd_end</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>The ccd temperature is recorded at the end of the line</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- temperature_fpe_start -->
+        <name>temperature_fpe_start</name>
+        <version_id>1.0</version_id>
+        <local_identifier>kplo.temperature_fpe_start</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>The fpe temperature is recorded at the beginning of the line</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- temperature_fpe_end -->
+        <name>temperature_fpe_end</name>
+        <version_id>1.0</version_id>
+        <local_identifier>kplo.temperature_fpe_end</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>The fpe temperature is recorded at the end of the line</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- temperature_psu_start -->
+        <name>temperature_psu_start</name>
+        <version_id>1.0</version_id>
+        <local_identifier>kplo.temperature_psu_start</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>The psu temperature is recorded at the beginning of the line</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- temperature_psu_end -->
+        <name>temperature_psu_end</name>
+        <version_id>1.0</version_id>
+        <local_identifier>kplo.temperature_psu_end</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>The psu temperature is recorded at the end of the line</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
     
     <DD_Attribute> <!-- temperature_fpa_a --> 
         <name>temperature_fpa_a</name>
@@ -1083,6 +1298,27 @@
             <value_data_type>ASCII_Real</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
+	
+	<DD_Attribute>
+		<name>yaw_flip_angle</name>
+		<version_id>1.0</version_id>
+		<local_identifier>kplo.yaw_flip_angle</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>IMG</submitter_name>
+		<definition>The spacecraft is yaw-rotated to ±45° (i.e., 45° or 225°) relative to the reference axis</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_Integer</value_data_type>
+			<DD_Permissible_Value>
+				<value>45</value>
+				<value_meaning>Yaw flip angle 45 deg</value_meaning>
+			</DD_Permissible_Value>
+			<DD_Permissible_Value>
+				<value>225</value>
+				<value_meaning>Yaw flip angle 225 deg</value_meaning>
+			</DD_Permissible_Value>
+		</DD_Value_Domain>
+	</DD_Attribute>
 
 <!-- End of attribute definitions -->
 
@@ -1416,14 +1652,15 @@
      </DD_Class>
     <!-- End of SHADOWCAM_Parameters Class definition -->
 
-    <!-- Beginning of LUTI_Parameters Class definition -->
-
+    <!-- Updated LUTI_Parameters Class definition with new attributes as of v1.0.2.0 -->
     <DD_Class>
         <name>LUTI_Parameters</name>
         <version_id>1.0</version_id>
         <local_identifier>kplo.LUTI_Parameters</local_identifier>
         <submitter_name>IMG</submitter_name>
         <definition>The LUTI_Parameters class is the container for Lunar Terrain Imager A and B specific observation parameters.</definition>
+        
+        <!-- Existing associations -->
         <DD_Association>
             <identifier_reference>kplo.rationale_desc</identifier_reference>
             <reference_type>attribute_of</reference_type>
@@ -1496,13 +1733,95 @@
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
+
+        <!-- Compression parameters -->
+        <DD_Association>
+            <identifier_reference>kplo.compression_mode</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>kplo.compression_ratio</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>kplo.constant_offset_data</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+
+        <!-- Timing parameters -->
+        <DD_Association>
+            <identifier_reference>kplo.line_rate</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>kplo.line_time</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+
+        <!-- Temperature parameters -->
+        <DD_Association>
+            <identifier_reference>kplo.temperature_case_start</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>kplo.temperature_case_end</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>kplo.temperature_ccd_start</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>kplo.temperature_ccd_end</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>kplo.temperature_fpe_start</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>kplo.temperature_fpe_end</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>kplo.temperature_psu_start</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>kplo.temperature_psu_end</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
     </DD_Class>
+	<!-- End of LUTI_Parameters Class definition -->
 
-    <!-- End of LUTI_Parameters Class definition -->
-    
-
-    <!-- Beginning of KPLO_Parameters Class definition with attributes in the order as they appear in the label -->
-    <DD_Class> <!-- KPLO_Parameters -->
+    <!-- Updated KPLO_Parameters Class definition with new attributes v1.0.2.0 -->
+    <DD_Class>
         <name>KPLO_Parameters</name>
         <version_id>1.0</version_id>
         <local_identifier>kplo.KPLO_Parameters</local_identifier>
@@ -1510,6 +1829,8 @@
         <definition>The KPLO_Parameters class is the container for mission-specific metadata elements.</definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>true</element_flag>
+        
+        <!-- Existing associations -->
         <DD_Association>
             <identifier_reference>kplo.product_version_id</identifier_reference>
             <reference_type>attribute_of</reference_type>
@@ -1534,6 +1855,15 @@
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
+
+        <DD_Association>
+            <identifier_reference>kplo.yaw_flip_angle</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+
+        <!-- Component associations -->
         <DD_Association>
             <identifier_reference>kplo.SHADOWCAM_Parameters</identifier_reference>
             <reference_type>component_of</reference_type>
@@ -1547,7 +1877,8 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    <!-- End of KPLO_Parameters Class definition -->
+	<!-- End of KPLO_Parameters Class definition -->
     <!-- End of class definitions -->
     
 </Ingest_LDD>
+
