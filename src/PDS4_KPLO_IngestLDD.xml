@@ -444,11 +444,11 @@
             <enumeration_flag>true</enumeration_flag>
             <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
             <DD_Permissible_Value>
-                <value>A</value>
+                <value>LUTIA</value>
                 <value_meaning>LUTI A instrument</value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
-                <value>B</value>
+                <value>LUTIB</value>
                 <value_meaning>LUTI B instrument</value_meaning>
             </DD_Permissible_Value>
         </DD_Value_Domain>
@@ -733,11 +733,11 @@
             </DD_Permissible_Value>    
             <DD_Permissible_Value>
                 <value>EMP1</value>
-                <value_meaning>Extended Mission Phase 1: End of nominal mission - before altitude-lowering maneuver (2024-Feb-19)</value_meaning>
+                <value_meaning>Extended Mission Phase 1: End of nominal mission - before altitude-lowering maneuver (2025-Feb-19)</value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>EMP2</value>
-                <value_meaning>Extended Mission Phase 2: Low-altitude (60 km) operations - frozen orbit insertion (2024-Sep-24, TBD)</value_meaning>
+                <value_meaning>Extended Mission Phase 2: Low-altitude (60 km) operations - frozen orbit insertion (2025-Sep-24)</value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>EMP3</value>
@@ -1881,4 +1881,3 @@
     <!-- End of class definitions -->
     
 </Ingest_LDD>
-
