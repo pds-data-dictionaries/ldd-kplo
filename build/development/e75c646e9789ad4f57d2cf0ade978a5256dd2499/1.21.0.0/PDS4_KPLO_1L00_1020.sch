@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:kplo  Version:1.0.2.0 - Mon Sep 22 20:27:24 UTC 2025 -->
+  <!-- PDS4 Schematron for Name Space Id:kplo  Version:1.0.2.0 - Wed Sep 24 19:06:19 UTC 2025 -->
   <!-- Generated from the PDS4 Information Model Version 1.21.0.0 - System Build 14.0 -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -34,9 +34,9 @@
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="kplo:LUTI_Parameters/kplo:frame_id">
-      <sch:assert test=". = ('A', 'B')">
+      <sch:assert test=". = ('LUTIA', 'LUTIB')">
         <title>kplo:LUTI_Parameters/kplo:frame_id/kplo:frame_id</title>
-        The attribute kplo:LUTI_Parameters/kplo:frame_id must be equal to one of the following values 'A', 'B'.</sch:assert>
+        The attribute kplo:LUTI_Parameters/kplo:frame_id must be equal to one of the following values 'LUTIA', 'LUTIB'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
